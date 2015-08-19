@@ -8,184 +8,153 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="pdf.css" />
+
 <style type="text/css">
-.m0{transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);-ms-transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);-webkit-transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);}
-.m1{transform: scale(0.25);}
+</style>
+
+<title></title>
+
+<style type="text/css">
 .ff1{font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;}
 .ff2{font-family:ff2;line-height:0.926758;font-style:normal;font-weight:normal;}
 .ff3{font-family:ff3;font-style:normal;font-weight:normal;}
 .ff5{font-family:ff5;line-height:0.977539;font-style:normal;font-weight:normal;}
 
-.sc_{text-shadow:none;}
-.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
-@media screen and (-webkit-min-device-pixel-ratio:0){
-.sc_{-webkit-text-stroke:0px transparent;}
-.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
-}
-.fc1{color:rgb(101,98,99);}
 .fc0{color:rgb(35,31,32);}
 
-.fs5{font-size:23.344140px;}
-.fs2{font-size:27.234832px;}
-.fs1{font-size:38.906900px;}
-.fs4{font-size:42.797592px;}
-.fs3{font-size:46.688280px;}
-.fs0{font-size:210.097268px;}
+h1 {
+    transform:rotate(-90deg);
+    transform-origin:0.5em 50%; 
+    white-space:pre;
+    font-size:41pt;
+    width:12.5em; 
+    margin:0.3em 0.35em 1em;
+    position:absolute;
+    left:0;
+    bottom:0;
+    text-align:right;
 
-
-.h1{height:770.500000px;}
-.h0{height:841.889764px;}
-.w0{width:595.275591px;}
-.w1{width:595.500000px;}
-.x0{left:0.000000px;}
-.y0{bottom:36.000000px;}
-.y1{bottom:430.403733px;}
-
-@media print{
-.fs5{font-size:31.125520pt;}
-.fs2{font-size:36.313109pt;}
-.fs1{font-size:51.875867pt;}
-.fs4{font-size:57.063456pt;}
-.fs3{font-size:62.251040pt;}
-.fs0{font-size:280.129691pt;}
-.h1{height:1027.333333pt;}
-.h0{height:1122.519685pt;}
-.w0{width:793.700788pt;}
-.w1{width:794.000000pt;}
+    font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;
 }
-</style>
-<title></title>
+p {
+    font-size:0.5rem;
+    line-height: 1.2em;
+    margin:0.5em 0;
+    color:rgb(101,98,99);
+}
+p.sm {
+    font-size:0.4rem;
+}
+ul {
+    margin:0;
+    padding:0 0 0 1em;
+    font-size:0.5rem;
+    color:rgb(101,98,99);
+}
+b {
+    color:black;
+}
 
-<style type="text/css">
-    h1 {
-        transform:rotate(-90deg);
-        transform-origin:0.5em 50%; 
-        white-space:pre;
-        font-size:41pt;
-        width:12.5em; 
-        margin:0.3em 0.35em 1em;
-        position:absolute;
-        left:0px;
-        bottom:0px;
-        text-align:right;
-
-        font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;
-    }
-    p {
-        font-size:0.5rem;
-        line-height: 1.2em;
-        margin:0.5em 0;
-        color:rgb(101,98,99);
-    }
-    p.sm {
-        font-size:0.4em;
-    }
-    ul {
-        margin:0;
-        padding:0 0 0 1em;
-        font-size:0.5rem;
-        color:rgb(101,98,99);
-    }
-    b {
-        color:black;
-    }
-
-    h2 {
-        font-size:1em;
-    }
-    .col2 {
-        position:absolute;
-        right:1rem;
-        top:2.35rem;
-        height:700px;
-        font-size:0.75rem;
-        width:9rem;
-        padding:0 0.5em;
-    }
-    .fillin {
-        padding:0.3em 0.25em 0.2em;
-        border:1px solid black;
-    }
-    h2.inv {
-        background-color:black;
-        color:white;
-        padding:0.3em 0.25em 0.2em;
-        font-size:0.8rem;
-    }
-    h3 {
-        font-size:0.6rem;
-        margin:0;
-    }
-    .cbox {
-        opacity:0.3;
-        width:1.5em;
-        margin-top:-4px;
-        margin-right:0.5em;
-    }
-    .blank {
-        width:9em;
-        height:1.4em;
-        border-bottom:1px solid rgba(101,98,99, 0.3);
-        display:inline-block;
-    }
-    .bp {
-        height:1.4em;
-        border-bottom:1px solid rgba(101,98,99, 0.3);
-        min-width:100%;
-    }
-    .stat {
-        flex: 0 0 30%;
-        border: 2px solid black;
-        box-sizing: border-box;
-        margin-bottom:1.5em;
-        border-radius:0.25em;
-        position:relative;
-    }
-    .stat h2 {
-        padding-left: 0.5em;
-        min-height:1em;
-    }
-    .stat .inv {
-        margin:0;padding:1em 0.5em;position:relative;
-    }
-    .stat p {
-        position:absolute;
-        top:50%;
-        right:0.5em;
-        margin:0;
-        color:white;
-    }
-    .statmod {
-        color:black;background:white;
-        position:absolute;
-        padding:0.35em 0;border-radius:50%;left:0.25em;
-        bottom:-1.15em;width:3.5em;height:3.5em;box-sizing:border-box;
-        display:block;text-align:center;
-        border:2px solid black; 
-        border-top-color:white;
-        border-left-color:white;
-        border-right-width:1px; /*box-shadow maybe?*/
-    }
-    .moves article{
-        -webkit-column-break-inside: avoid; /* Chrome, Safari */
-        page-break-inside: avoid;           /* Theoretically FF 20+ */
-        break-inside: avoid-column;         /* IE 11 */
-        margin-bottom: 1.5em;
-        padding-left: 1.5em;
-    }
-    .moves h3 {
-        text-indent:-1em;
-    }
-    main {
-        width:319px;height:700px;margin-left:93px;margin-top:2.35rem;font-size:0.75rem;
-    }
+h2 {
+    font-size:1em;
+}
+.col2 {
+    position:absolute;
+    right:1rem;
+    top:2.35rem;
+    height:43.75rem;
+    font-size:0.75rem;
+    width:9rem;
+    padding:0 0.5em;
+}
+.fillin {
+    padding:0.3em 0.25em 0.2em;
+    border:1px solid black;
+}
+h2.inv {
+    background-color:black;
+    color:white;
+    padding:0.3em 0.25em 0.2em;
+    font-size:0.8rem;
+}
+h3 {
+    font-size:0.6rem;
+    margin:0;
+}
+.cbox {
+    opacity:0.3;
+    width:1.5em;
+    margin-top:-4px;
+    margin-right:0.5em;
+}
+.blank {
+    width:9em;
+    height:1.4em;
+    border-bottom:1px solid rgba(101,98,99, 0.3);
+    display:inline-block;
+}
+.bp {
+    height:1.4em;
+    border-bottom:1px solid rgba(101,98,99, 0.3);
+    min-width:100%;
+}
+.stat {
+    flex: 0 0 30%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    margin-bottom:1.5em;
+    border-radius:0.25em;
+    position:relative;
+}
+.stat h2 {
+    padding-left: 0.5em;
+    min-height:1em;
+}
+.stat .inv {
+    margin:0;padding:1em 0.5em;position:relative;
+}
+.stat p {
+    position:absolute;
+    top:50%;
+    right:0.5em;
+    margin:0;
+    color:white;
+}
+.statmod {
+    color:black;background:white;
+    position:absolute;
+    padding:0.35em 0;border-radius:50%;left:0.25em;
+    bottom:-1.15em;width:3.5em;height:3.5em;box-sizing:border-box;
+    display:block;text-align:center;
+    border:2px solid black; 
+    border-top-color:white;
+    border-left-color:white;
+    border-right-width:1px; /*box-shadow maybe?*/
+}
+.moves article{
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+.moves h3 {
+    text-indent:-1em;
+}
+main {
+    width:19.9375rem;height:43.75rem;margin-left:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
+}
+.pf {
+    width: 37.20475rem;
+    height:52.61811025rem;
+}
 
 </style>
 </head>
 <body>
     <div id="page-container">
-        <div id="pf1" class="pf w0 h0">
-                <img style="position:absolute;width:52px;top:0;left:1rem;" src="DWlogo.png" />
+        <div id="pf1" class="pf">
+                <img style="position:absolute;width:3.25rem;top:0;left:1rem;" src="DWlogo.png" />
                 <h1>THE BARD</h1>
                 <main>
                     <section>
@@ -196,25 +165,23 @@
                         </div>
                     </section>
 
-                    <section>
-                        <div style="display:flex;margin-top:0.5em;margin-bottom:1em;">
-                            <div style="flex:1;padding-right:0.5em;">
-                                <h2 class="ff4 inv" style="margin-top:0;">LOOK</h2>
-                                <p class="ff5">Choose one for each, or write your own:</p>
-                                <p class="ff2"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
-                                <p class="ff2"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
-                                <p class="ff2"><span>HAIR:</span><span class="ff3"> Fancy, wild, stylish cap</span></p>
-                                <p class="ff2"><span>CLOTHES:</span><span class="ff3"> Finery, traveling, poor</span></p>
-                                <p class="bp"> </p>
+                    <section style="display:flex;margin-top:0.5em;margin-bottom:1em;">
+                        <div style="flex:1;padding-right:0.5em;">
+                            <h2 class="ff4 inv" style="margin-top:0;">LOOK</h2>
+                            <p class="ff5">Choose one for each, or write your own:</p>
+                            <p class="ff2"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
+                            <p class="ff2"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
+                            <p class="ff2"><span>HAIR:</span><span class="ff3"> Fancy, wild, stylish cap</span></p>
+                            <p class="ff2"><span>CLOTHES:</span><span class="ff3"> Finery, traveling, poor</span></p>
+                            <p class="bp"> </p>
+                        </div>
+                        <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;">
+                            <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">ARMOR<img src="AC.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
+                            <div style="flex:0 0 auto;">
+                                <h2 class="ff4 inv" style="margin:0;position:relative;">HIT POINTS<img src="heart.png" style="position:absolute;right:13%;top:-0.5em;height:3em;" /></h2>
+                                <p class="ff3 sm" style="display:flex;justify-content:space-between;margin-bottom:0;"><span>Max (6+Constitution)</span><span>Current</span></p>
                             </div>
-                            <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;">
-                                <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">ARMOR<img src="AC.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
-                                <div style="flex:0 0 auto;">
-                                    <h2 class="ff4 inv" style="margin:0;position:relative;">HIT POINTS<img src="heart.png" style="position:absolute;right:13%;top:-0.5em;height:3em;" /></h2>
-                                    <p class="ff3" style="display:flex;justify-content:space-between;"><span>Max (6+Constitution)</span><span>Current</span></p>
-                                </div>
-                                <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">DAMAGE<img src="d6.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
-                            </div>
+                            <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">DAMAGE<img src="d6.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
                         </div>
                     </section>
 
