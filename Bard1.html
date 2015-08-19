@@ -114,6 +114,7 @@
     }
     h3 {
         font-size:0.6rem;
+        margin:0;
     }
     .cbox {
         opacity:0.3;
@@ -170,6 +171,10 @@
         page-break-inside: avoid;           /* Theoretically FF 20+ */
         break-inside: avoid-column;         /* IE 11 */
         margin-bottom: 1.5em;
+        padding-left: 1.5em;
+    }
+    .moves h3 {
+        text-indent:-1em;
     }
     main {
         width:319px;height:700px;margin-left:93px;margin-top:2.35rem;font-size:0.75rem;
@@ -179,8 +184,7 @@
 </head>
 <body>
     <div id="page-container">
-        <div id="pf1" class="pf w0 h0" data-page-no="1">
-            <div class="pc pc1 w0 h0">
+        <div id="pf1" class="pf w0 h0">
                 <img style="position:absolute;width:52px;top:0;left:1rem;" src="DWlogo.png" />
                 <h1>THE BARD</h1>
                 <main>
@@ -195,21 +199,21 @@
                     <section>
                         <div style="display:flex;margin-top:0.5em;margin-bottom:1em;">
                             <div style="flex:1;padding-right:0.5em;">
-                                <h2 class="ff4 ws0 inv" style="margin-top:0;">LOOK</h2>
-                                <p class="ff5 ws0">Choose one for each, or write your own:</p>
-                                <p class="ff2 ws0"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
-                                <p class="ff2 ws0"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
-                                <p class="ff2 ws0"><span>HAIR:</span><span class="ff3"> Fancy, wild, stylish cap</span></p>
-                                <p class="ff2 ws0"><span>CLOTHES:</span><span class="ff3"> Finery, traveling, poor</span></p>
+                                <h2 class="ff4 inv" style="margin-top:0;">LOOK</h2>
+                                <p class="ff5">Choose one for each, or write your own:</p>
+                                <p class="ff2"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
+                                <p class="ff2"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
+                                <p class="ff2"><span>HAIR:</span><span class="ff3"> Fancy, wild, stylish cap</span></p>
+                                <p class="ff2"><span>CLOTHES:</span><span class="ff3"> Finery, traveling, poor</span></p>
                                 <p class="bp"> </p>
                             </div>
                             <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;">
-                                <h2 class="ff4 ls0 ws0 inv" style="margin:0;flex:0 0 auto;position:relative;">ARMOR<img src="AC.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
+                                <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">ARMOR<img src="AC.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
                                 <div style="flex:0 0 auto;">
-                                    <h2 class="ff4 ls0 ws0 inv" style="margin:0;position:relative;">HIT POINTS<img src="heart.png" style="position:absolute;right:13%;top:-0.5em;height:3em;" /></h2>
+                                    <h2 class="ff4 inv" style="margin:0;position:relative;">HIT POINTS<img src="heart.png" style="position:absolute;right:13%;top:-0.5em;height:3em;" /></h2>
                                     <p class="ff3" style="display:flex;justify-content:space-between;"><span>Max (6+Constitution)</span><span>Current</span></p>
                                 </div>
-                                <h2 class="ff4 ls0 ws0 inv" style="margin:0;flex:0 0 auto;position:relative;">DAMAGE<img src="d6.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
+                                <h2 class="ff4 inv" style="margin:0;flex:0 0 auto;position:relative;">DAMAGE<img src="d6.png" style="position:absolute;right:15%;top:-0.75em;height:3em;" /></h2>
                             </div>
                         </div>
                     </section>
@@ -218,32 +222,32 @@
                         <p class="ff5" style="text-align:center;margin:1.5em 0;">Assign these scores to your stats: 16(+2), 15(+1), 13(+1), 12(–), 9(–), 8(-1)</p>
                         <div style="display:flex;flex-flow: row wrap;justify-content:space-between;">
                             <div class="stat">
-                                <h2 class="ff4" style="">Strength</h2>
+                                <h2 class="ff4">Strength</h2>
                                 <h2 class="ff2 inv"><span class="statmod">STR</span></h2>
                                 <p class="ff4">Weak -1 <i class="fa fa-square"></i></p>
                             </div>
                             <div class="stat">
-                                <h2 class="ff4" style="">Dexterity</h2>
+                                <h2 class="ff4">Dexterity</h2>
                                 <h2 class="ff2 inv"><span class="statmod">DEX</span></h2>
                                 <p class="ff4">Shaky -1 <i class="fa fa-square"></i></p>
                             </div>
                             <div class="stat">
-                                <h2 class="ff4" style="">Constitution</h2>
+                                <h2 class="ff4">Constitution</h2>
                                 <h2 class="ff2 inv"><span class="statmod">CON</span></h2>
                                 <p class="ff4">Sick -1 <i class="fa fa-square"></i></p>
                             </div>
                             <div class="stat">
-                                <h2 class="ff4" style="">Intelligence</h2>
+                                <h2 class="ff4">Intelligence</h2>
                                 <h2 class="ff2 inv"><span class="statmod">INT</span></h2>
                                 <p class="ff4">Stunned -1 <i class="fa fa-square"></i></p>
                             </div>
                             <div class="stat">
-                                <h2 class="ff4" style="">Wisdom</h2>
+                                <h2 class="ff4">Wisdom</h2>
                                 <h2 class="ff2 inv"><span class="statmod">WIS</span></h2>
                                 <p class="ff4">Confused -1 <i class="fa fa-square"></i></p>
                             </div>
                             <div class="stat">
-                                <h2 class="ff4" style="">Charisma</h2>
+                                <h2 class="ff4">Charisma</h2>
                                 <h2 class="ff2 inv"><span class="statmod">CHA</span></h2>
                                 <p class="ff4">Scarred -1 <i class="fa fa-square"></i></p>
                             </div>
@@ -253,8 +257,8 @@
                     <section class="moves">
                         <h2 class="ff4 inv">STARTING MOVES</h2>
                         <div style="-moz-column-count: 2;">
-                            <article style="padding-left:1.5em;">
-                                <h3 class="ff2" style="margin:0;text-indent:-1em;"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Arcane Art</h3>
+                            <article>
+                                <h3 class="ff2"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Arcane Art</h3>
                                 <p class="ff3">When you <b class="ff2">weave a performance into a basic spell</b>, choose an ally and an effect:</p>
                                 <ul>
                                     <li class="ff3">Heal 1d8 damage</li>
@@ -264,8 +268,8 @@
                                 </ul>
                                 <p class="ff3">Then roll+CHA. • On a 10+, the ally gets the selected effect. • On a 7-9, your spell still works, but you draw unwanted attention or your magic reverberates to other targets affecting them as well, GM’s choice.</p>
                             </article>
-                            <article style="padding-left:1.5em;">
-                                <h3 class="ff2" style="margin:0;text-indent:-1em;"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Charming &amp; Open</h3>
+                            <article>
+                                <h3 class="ff2"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Charming &amp; Open</h3>
                                 <p class="ff3">When you <b class="ff2">speak frankly with someone</b>you can ask their player a question from the list below. They must answer it truthfully, then they may ask you a question from the list (which you must answer truthfully).</p>
                                 <ul>
                                     <li class="ff3">Whom do you serve?</li>
@@ -275,8 +279,8 @@
                                     <li class="ff3">What do you most desire?</li>
                                 </ul>
                             </article>
-                            <article style="padding-left:1.5em;">
-                                <h3 class="ff2" style="margin:0;text-indent:-1em;"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Bardic Lore</h3>
+                            <article>
+                                <h3 class="ff2"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>Bardic Lore</h3>
 
                                 <p class="ff3">Choose an area of expertise:</p>
                                 <ul class="fa-ul">
@@ -290,8 +294,8 @@
                                 </ul>
                                 <p class="ff3">When you <b class="ff2">first encounter an important creature, location, or item</b> (your call) covered by your bardic lore you can ask the GM any one question about it; the GM will answer truthfully. The GM may then ask you what tale, song, or legend you heard that information in.</p>
                             </article>
-                            <article style="padding-left:1.5em;">
-                                <h3 class="ff2" style="margin:0;text-indent:-1em;"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>A Port In The Storm</h3>
+                            <article>
+                                <h3 class="ff2"><i class="fa fa-check-square-o" style="box-sizing:border-box;width:1em;"></i>A Port In The Storm</h3>
                                 <p class="ff3">When you <b class="ff2">return to a civilized settlement you’ve visited before</b>, tell the GM when you were last here. They’ll tell you how it’s changed since then.</p>
                             </article>
                         </div>
@@ -308,21 +312,21 @@
                         <div style="display:flex;">
                             <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
                             <div>
-                                <h3 class="ff2" style="margin:0;">Good</h3>
+                                <h3 class="ff2">Good</h3>
                                 <p class="ff3">Perform your art to aid someone else.</p>
                             </div>
                         </div>
                         <div style="display:flex;">
                             <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
                             <div>
-                                <h3 class="ff2" style="margin:0;">Neutral</h3>
+                                <h3 class="ff2">Neutral</h3>
                                 <p class="ff3">Avoid a conflict or defuse a tense situation.</p>
                             </div>
                         </div>
                         <div style="display:flex;">
                             <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
                             <div>
-                                <h3 class="ff2" style="margin:0;">Chaotic</h3>
+                                <h3 class="ff2">Chaotic</h3>
                                 <p class="ff3">Spur others to significant and unplanned decisive action.</p>
                             </div>
                         </div>
@@ -353,14 +357,14 @@
                         <div style="display:flex;">
                             <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
                             <div>
-                                <h3 class="ff2" style="margin:0;">Human</h3>
+                                <h3 class="ff2">Human</h3>
                                 <p class="ff3">When you <b class="ff2">first enter a civilized settlement</b> someone who respects the custom of hospitality to minstrels will take you in as their guest.</p>
                             </div>
                         </div>
                         <div style="display:flex;">
                             <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
                             <div>
-                                <h3 class="ff2" style="margin:0;">Elf</h3>
+                                <h3 class="ff2">Elf</h3>
                                 <p class="ff3">When you <b class="ff2">enter an important location</b> (your call) you can ask the GM for one fact from the history of that location.</p>
                             </div>
                         </div>
@@ -376,6 +380,5 @@
                 </aside>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
