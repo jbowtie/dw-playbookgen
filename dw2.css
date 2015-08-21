@@ -18,12 +18,15 @@
 .ff5{font-family:ff5;line-height:0.977539;font-style:normal;font-weight:normal;}
 
 .fc0{color:rgb(35,31,32);}
-p, ul {
-    color:rgb(101,98,99);
-}
+p, ul {color:rgb(101,98,99);}
+b {color:black;}
 
 h1 {
     font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;
+}
+
+h2 {
+    font-size:1em;
 }
 
 p {
@@ -37,7 +40,11 @@ p.sm {
     font-size:0.4rem;
 }
 em{font-family:ff5;font-style:normal;font-weight:normal;}
-b{font-family:ff2;font-style:normal;font-weight:normal;}
+b, h3{font-family:ff2;font-style:normal;font-weight:normal;}
+h3 {
+    font-size:0.6rem;
+    margin:0;
+}
 
 /* GENERIC STYLES */
 
@@ -66,13 +73,7 @@ ul {
     font-size:0.5rem;
 }
 
-b {
-    color:black;
-}
 
-h2 {
-    font-size:1em;
-}
 .col2 {
     position:absolute;
     right:1rem;
@@ -94,10 +95,6 @@ h2.inv {
     padding:0.3em 0.25em 0.2em;
     font-size:0.8rem;
     text-transform: uppercase;
-}
-h3 {
-    font-size:0.6rem;
-    margin:0;
 }
 .cbox {
     opacity:0.3;
