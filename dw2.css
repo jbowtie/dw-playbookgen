@@ -4,6 +4,13 @@
 @font-face{font-family:ff4;src:url("AveriaGWF-Regular.ttf");}
 @font-face{font-family:ff5;src:url("AveriaGWF-LightItalic.ttf");}
 
+@media print{
+    html {
+        font-size:125%;
+    }
+}
+
+
 .ff1{font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;}
 .ff2{font-family:ff2;line-height:0.926758;font-style:normal;font-weight:normal;}
 .ff3{font-family:ff3;font-style:normal;font-weight:normal;}
@@ -11,6 +18,13 @@
 .ff5{font-family:ff5;line-height:0.977539;font-style:normal;font-weight:normal;}
 
 .fc0{color:rgb(35,31,32);}
+
+img.logo {
+    position:absolute;
+    width:3.25rem;
+    top:0;
+    left:1rem;
+}
 
 h1 {
     transform:rotate(-90deg);
@@ -41,8 +55,13 @@ ul {
     font-size:0.5rem;
     color:rgb(101,98,99);
 }
+
 b {
     color:black;
+    font-family:ff2;
+    line-height:0.926758;
+    font-style:normal;
+    font-weight:normal;
 }
 
 h2 {
@@ -60,12 +79,15 @@ h2 {
 .fillin {
     padding:0.3em 0.25em 0.2em;
     border:1px solid black;
+    box-sizing:border-box;
+    border-radius:0.25em;
 }
 h2.inv {
     background-color:black;
     color:white;
     padding:0.3em 0.25em 0.2em;
     font-size:0.8rem;
+    text-transform: uppercase;
 }
 h3 {
     font-size:0.6rem;
@@ -128,9 +150,6 @@ h3 {
     margin-bottom: 1.5em;
     padding-left: 1.5em;
 }
-.moves h3 {
-    text-indent:-1em;
-}
 main {
     width:19.9375rem;height:43.75rem;margin-left:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
 }
@@ -140,3 +159,67 @@ main {
     text-rendering: optimizeLegibility;
 }
 
+section#name h2 {
+    margin:0 0 0.5em;
+}
+section#name div {
+min-height:2em;
+}
+
+
+.detail {
+    display:flex;
+    margin-top:0.5em;
+    margin-bottom:1em;
+}
+
+.look {
+    flex:1;padding-right:0.5em;
+}
+
+.look h2 {
+    margin-top:0;
+}
+
+.combat {
+    flex:1;display:flex;flex-direction:column;justify-content:space-between;
+}
+
+.combat h2 {
+margin:0;position:relative;}
+
+ .combat > * {
+ flex:0 0 auto;
+ }
+
+ .combat img {
+position:absolute;right:15%;top:-0.75em;height:3em;
+ }
+
+ .combat .hp img {
+ right:13%;top:-0.5em;
+ }
+
+ .stats > p {
+text-align:center;margin:1.5em 0;
+ }
+
+ .stats > div {
+display:flex;flex-flow: row wrap;justify-content:space-between;
+ }
+
+ .hp p {
+display:flex;justify-content:space-between;margin-bottom:0;
+ }
+
+ aside section > div {
+     display:flex;
+ }
+
+.moves h3 {
+    text-indent:-0.75em;
+}
+.moves h3  > i {
+    box-sizing:border-box;
+    width:0.75em;
+ }
