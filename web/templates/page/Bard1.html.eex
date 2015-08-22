@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-<link rel="stylesheet" href="pdf.css" />
-<link rel="stylesheet" href="dw2.css" />
-<title>The Bard</title>
-</head>
-<body>
     <div id="page-container">
         <div id="pf1" class="pf">
-            <img class="logo" src="DWlogo.png" />
+            <img class="logo" src="/images/DWlogo.png" />
             <h1>THE BARD</h1>
             <main>
             <section id="name">
@@ -35,12 +22,12 @@
                     <p class="bp"> </p>
                 </div>
                 <div class="combat">
-                    <h2 class="ff4 inv">Armor<img src="AC.png" /></h2>
+                    <h2 class="ff4 inv">Armor<img src="/images/AC.png" /></h2>
                     <section class="hp">
-                        <h2 class="ff4 inv">Hit Points<img src="heart.png" /></h2>
+                        <h2 class="ff4 inv">Hit Points<img src="/images/heart.png" /></h2>
                         <p class="ff3 sm"><span>Max (6+Constitution)</span><span>Current</span></p>
                     </section>
-                    <h2 class="ff4 inv">Damage<img src="d6.png" /></h2>
+                    <h2 class="ff4 inv">Damage<img src="/images/d6.png" /></h2>
                 </div>
             </section>
 
@@ -210,5 +197,3 @@
                 </aside>
             </div>
         </div>
-    </body>
-</html>

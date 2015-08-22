@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-<link rel="stylesheet" href="pdf.css" />
-<link rel="stylesheet" href="dw2.css" />
-<title>The Bard</title>
-</head>
-<body>
     <div id="page-container" class="adv">
         <div id="pf1" class="pf">
-            <img class="logo" src="DWlogo.png" />
+            <img class="logo" src="/images/DWlogo.png" />
             <h1>THE BARD</h1>
             <main>
                 <section class="moves">
@@ -113,11 +100,11 @@
             </main>
             <aside class="col2">
                 <section>
-                    <h2 class="ff4 inv coin">Coin<img src="coin.png" /></h2>
+                    <h2 class="ff4 inv coin">Coin<img src="/images/coin.png" /></h2>
                 </section>
                 <section class="gear">
                     <hgroup>
-                    <h2 class="ff4 inv" style="font-size:0.8em;">Starting Gear<img src="gear.png" /></h2>
+                    <h2 class="ff4 inv" style="font-size:0.8em;">Starting Gear<img src="/images/gear.png" /></h2>
                     <p class="ff3 sm"><span>Max Load (9+STR)</span><span>Current</span></p>
                     </hgroup>
                     <p><b>Dungeon Rations</b> (5 uses, 1 weight)</p>
@@ -164,5 +151,3 @@
             </aside>
         </div>
     </div>
-</body>
-</html>
