@@ -34,6 +34,7 @@ defmodule Playbook.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 1.4"},
      {:phoenix_live_reload, "~> 0.5", only: :dev},
+     {:earmark, "~> 0.1.8" },
      {:cowboy, "~> 1.0"}]
   end
 end

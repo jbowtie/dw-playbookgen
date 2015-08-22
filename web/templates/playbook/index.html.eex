@@ -1,0 +1,40 @@
+<h2>Listing playbooks</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Loadbase</th>
+      <th>Hpbase</th>
+      <th>Damagedie</th>
+      <th>Gear</th>
+      <th>Bonds</th>
+      <th>Namelist</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for playbook <- @playbooks do %>
+    <tr>
+      <td><%= playbook.name %></td>
+      <td><%= playbook.slug %></td>
+      <td><%= playbook.loadBase %></td>
+      <td><%= playbook.hpBase %></td>
+      <td><%= playbook.damageDie %></td>
+      <td><%= playbook.gear %></td>
+      <td><%= playbook.bonds %></td>
+      <td><%= playbook.nameList %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: playbook_path(@conn, :show, playbook), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: playbook_path(@conn, :edit, playbook), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: playbook_path(@conn, :delete, playbook), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New playbook", to: playbook_path(@conn, :new) %>

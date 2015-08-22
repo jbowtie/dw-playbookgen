@@ -1,0 +1,48 @@
+<h2>Show playbook</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @playbook.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @playbook.slug %>
+  </li>
+
+  <li>
+    <strong>Loadbase:</strong>
+    <%= @playbook.loadBase %>
+  </li>
+
+  <li>
+    <strong>Hpbase:</strong>
+    <%= @playbook.hpBase %>
+  </li>
+
+  <li>
+    <strong>Damagedie:</strong>
+    <%= @playbook.damageDie %>
+  </li>
+
+  <li>
+    <strong>Gear:</strong>
+    <%= @playbook.gear %>
+  </li>
+
+  <li>
+    <strong>Bonds:</strong>
+    <%= @playbook.bonds %>
+  </li>
+
+  <li>
+    <strong>Namelist:</strong>
+    <%= @playbook.nameList %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: playbook_path(@conn, :edit, @playbook) %>
+<%= link "Back", to: playbook_path(@conn, :index) %>

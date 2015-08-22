@@ -1,0 +1,56 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :name, "Name", class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :slug, "Slug", class: "control-label" %>
+    <%= text_input f, :slug, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :loadBase, "Loadbase", class: "control-label" %>
+    <%= number_input f, :loadBase, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :hpBase, "Hpbase", class: "control-label" %>
+    <%= number_input f, :hpBase, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :damageDie, "Damagedie", class: "control-label" %>
+    <%= number_input f, :damageDie, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :gear, "Gear", class: "control-label" %>
+    <%= textarea f, :gear, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :bonds, "Bonds", class: "control-label" %>
+    <%= textarea f, :bonds, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :nameList, "Namelist", class: "control-label" %>
+    <%= textarea f, :nameList, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -49,6 +49,7 @@ background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 }
 
 
+/*  TYPOGRAPHY  */
 @font-face{font-family:ff1;src:url("/fonts/Metamorphous-Regular.otf");}
 @font-face{font-family:ff2;src:url("/fonts/AveriaGWF-Bold.ttf");}
 @font-face{font-family:ff3;src:url("/fonts/Averia-Regular.ttf");}
@@ -61,7 +62,6 @@ background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
     }
 }
 
-/*  TYPOGRAPHY  */
 .ff1{font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;}
 .ff2{font-family:ff2;line-height:0.926758;font-style:normal;font-weight:normal;}
 .ff3{font-family:ff3;font-style:normal;font-weight:normal;}
@@ -74,10 +74,16 @@ b {color:black;}
 
 h1 {
     font-family:ff1;line-height:0.942383;font-style:normal;font-weight:normal;
+    text-transform: uppercase;
 }
 
 h2 {
     font-size:1em;
+}
+
+h2.inv {
+    font-size:0.8rem;
+    text-transform: uppercase;
 }
 
 p {
@@ -97,7 +103,10 @@ h3 {
     margin:0;
 }
 
-/* GENERIC STYLES */
+ul {
+    font-size:0.5rem;
+}
+/* LAYOUT */
 
 img.logo {
     position:absolute;
@@ -121,7 +130,6 @@ h1 {
 ul {
     margin:0;
     padding:0 0 0 1em;
-    font-size:0.5rem;
 }
 
 
@@ -144,8 +152,6 @@ h2.inv {
     background-color:black;
     color:white;
     padding:0.3em 0.25em 0.2em;
-    font-size:0.8rem;
-    text-transform: uppercase;
 }
 .cbox {
     opacity:0.3;

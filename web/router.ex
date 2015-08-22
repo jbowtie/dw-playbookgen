@@ -18,6 +18,10 @@ defmodule Playbook.Router do
     get "/", PageController, :index
     get "/bard", PageController, :start
     get "/bard/2", PageController, :gear
+
+    resources "/playbooks", PlaybookController
+
+    get "/:slug/", PageController, :show
   end
 
   # Other scopes may use custom stacks.

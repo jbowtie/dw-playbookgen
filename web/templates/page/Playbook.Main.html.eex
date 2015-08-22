@@ -1,13 +1,12 @@
     <div id="page-container">
         <div id="pf1" class="pf">
             <img class="logo" src="/images/DWlogo.png" />
-            <h1>The Bard</h1>
+            <h1><%= @book.name %></h1>
             <main>
             <section id="name">
                 <h2 class="ff4 ls0 fillin">NAME</h2>
                 <div>
-                    <p class="ff5 sm">ELF: Astrafel, Daelwyn, Feliana, Damarra, Sistranalle, Pendrell, Melliandre, Dagoliir</p>
-                    <p class="ff5 sm">HUMAN: Baldric, Leena, Willem, Edwyn, Florian, Seraphine, Quorra, Charlotte, Lily, Ramonde, Cassandra</p>
+                    <p class="ff5 sm"><%= @book.nameList %></p>
                 </div>
             </section>
 
@@ -25,9 +24,9 @@
                     <h2 class="ff4 inv">Armor<img src="/images/AC.png" /></h2>
                     <section class="hp">
                         <h2 class="ff4 inv">Hit Points<img src="/images/heart.png" /></h2>
-                        <p class="ff3 sm"><span>Max (6+Constitution)</span><span>Current</span></p>
+                        <p class="ff3 sm"><span>Max (<%= @book.hpBase %>+Constitution)</span><span>Current</span></p>
                     </section>
-                    <h2 class="ff4 inv">Damage<img src="/images/d6.png" /></h2>
+                    <h2 class="ff4 inv">Damage<img src="/images/d<%= @book.damageDie %>.png" /></h2>
                 </div>
             </section>
 
@@ -155,12 +154,7 @@
                     <section>
                         <h2 class="ff4 inv">Bonds</h2>
                         <p class="ff5">Fill in at least one with the name of a companion, or write your own.</p>
-                        <p>This is not my first adventure with <span class="blank"></span> .</p>
-                        <p>I sang stories of <span class="blank"></span> long before I ever met them in person.</p>
-                        <p><span class="blank"></span> is often the butt of my jokes.</p>
-                        <p>I am writing a ballad about the adventures of <span class="blank"></span> .</p>
-                        <p><span class="blank"></span> trusted me with a secret.</p>
-                        <p><span class="blank"></span> does not trust me, and for good reason.</p>
+                        <%= {:safe, Earmark.to_html @book.bonds} %>
                         <p class="bp"> </p>
                         <p class="bp"> </p>
                         <p class="bp"> </p>
