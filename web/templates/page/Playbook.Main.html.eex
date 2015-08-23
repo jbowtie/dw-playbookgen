@@ -66,53 +66,19 @@
                 </div>
             </section>
 
-                    <section class="moves">
-                        <h2 class="ff4 inv">Starting Moves</h2>
-                        <div style="-moz-column-count: 2;">
-                            <article>
-                                <h3 class="ff2"><i class="fa fa-check-square-o"></i>Arcane Art</h3>
-                                <p>When you <b class="ff2">weave a performance into a basic spell</b>, choose an ally and an effect:</p>
-                                <ul>
-                                    <li class="ff3">Heal 1d8 damage</li>
-                                    <li class="ff3">+1d4 forward to damage</li>
-                                    <li class="ff3">Their mind is shaken clear of one enchantment</li>
-                                    <li class="ff3">The next time someone successfully assists the target with aid, they get +2 instead of +1</li>
-                                </ul>
-                                <p class="ff3">Then roll+CHA. • On a 10+, the ally gets the selected effect. • On a 7-9, your spell still works, but you draw unwanted attention or your magic reverberates to other targets affecting them as well, GM’s choice.</p>
-                            </article>
-                            <article>
-                                <h3 class="ff2"><i class="fa fa-check-square-o"></i>Charming &amp; Open</h3>
-                                <p>When you <b class="ff2">speak frankly with someone</b>you can ask their player a question from the list below. They must answer it truthfully, then they may ask you a question from the list (which you must answer truthfully).</p>
-                                <ul>
-                                    <li class="ff3">Whom do you serve?</li>
-                                    <li class="ff3">What do you wish I would do?</li>
-                                    <li class="ff3">How can I get you to _____?</li>
-                                    <li class="ff3">What are you really feeling right now?</li>
-                                    <li class="ff3">What do you most desire?</li>
-                                </ul>
-                            </article>
-                            <article>
-                                <h3 class="ff2"><i class="fa fa-check-square-o"></i>Bardic Lore</h3>
+            <section class="moves">
+                <h2 class="ff4 inv">Starting Moves</h2>
+                <div style="-moz-column-count: 2;">
+                <%= for m <- starting @book.moves do %>
+                    <article>
+                        <h3><i class="fa fa-check-square-o"></i><%= m.title %></h3>
+                        <%= markdown m.desc %>
+                    </article>
+                <% end %>
+                </div>
+            </section>
+            </main>
 
-                                <p>Choose an area of expertise:</p>
-                                <ul class="fa-ul">
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>Spells and Magicks</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>The Dead and Undead</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>Grand Histories of the Known World</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>A Bestiary of Creatures Unusual</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>The Planar Spheres</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>Legends of Heroes Past</li>
-                                    <li class="ff3"><i class="fa fa-li fa-square-o"></i>Gods and Their Servants</li>
-                                </ul>
-                                <p>When you <b>first encounter an important creature, location, or item</b> (your call) covered by your bardic lore you can ask the GM any one question about it; the GM will answer truthfully. The GM may then ask you what tale, song, or legend you heard that information in.</p>
-                            </article>
-                            <article>
-                                <h3 class="ff2"><i class="fa fa-check-square-o"></i>A Port In The Storm</h3>
-                                <p>When you <b>return to a civilized settlement you’ve visited before</b>, tell the GM when you were last here. They’ll tell you how it’s changed since then.</p>
-                            </article>
-                        </div>
-                    </section>
-                </main>
                 <aside class="col2">
                     <div style="display:flex;margin-bottom:2.3em;">
                         <h2 class="ff4" style="margin-top:0.4em;flex:1;">LEVEL</h2>

@@ -11,6 +11,7 @@ defmodule Playbook.Playbook do
     field :bonds, :string
     field :nameList, :string
 
+    has_many :moves, Playbook.Move
     timestamps
   end
 

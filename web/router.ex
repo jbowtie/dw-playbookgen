@@ -25,7 +25,10 @@ defmodule Playbook.Router do
 
   scope "/admin", Playbook do
     pipe_through :browser # Use the default browser stack
-    resources "/playbooks", PlaybookController
+    resources "/playbooks", PlaybookController do
+        resources "/moves", MoveController
+    end
+    resources "/moves", MoveController
   end
 
   # Other scopes may use custom stacks.

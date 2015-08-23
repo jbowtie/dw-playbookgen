@@ -1,0 +1,33 @@
+<h2>Show move</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @move.title %>
+  </li>
+
+  <li>
+    <strong>Usage:</strong>
+    <%= @move.usage %>
+  </li>
+
+  <li>
+    <strong>Desc:</strong>
+    <%= markdown @move.desc %>
+  </li>
+
+  <li>
+    <strong>Level:</strong>
+    <%= @move.level %>
+  </li>
+
+  <li>
+    <strong>Playbook:</strong>
+    <%= @move.playbook.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: move_path(@conn, :edit, @move) %>
+<%= link "Back", to: move_path(@conn, :index) %>

@@ -1,0 +1,6 @@
+<h2>Edit move</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: move_path(@conn, :update, @move) %>
+
+<%= link "Back", to: move_path(@conn, :index) %>

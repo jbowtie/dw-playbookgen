@@ -1,0 +1,28 @@
+<h2><%= @playbook.name %> moves</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Level</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for move <- @moves do %>
+    <tr>
+      <td><%= move.title %></td>
+      <td><%= move.level %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: move_path(@conn, :show, move), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: move_path(@conn, :edit, move), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: move_path(@conn, :delete, move), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New move", to: playbook_move_path(@conn, :new, @playbook) %>
