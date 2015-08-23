@@ -3,6 +3,8 @@ defmodule Playbook.PlaybookController do
 
   alias Playbook.Playbook
 
+  plug :put_layout, "admin.html"
+
   plug :scrub_params, "playbook" when action in [:create, :update]
 
   def index(conn, _params) do

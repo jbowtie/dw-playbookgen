@@ -8,33 +8,33 @@
   </li>
 
   <li>
-    <strong>Slug:</strong>
-    <%= @playbook.slug %>
+    <%= link "Page1", to: page_path(@conn, :show, @playbook.slug) %>
+    <%= link "Page2", to: page_path(@conn, :gear, @playbook.slug) %>
   </li>
 
   <li>
-    <strong>Loadbase:</strong>
-    <%= @playbook.loadBase %>
+    <strong>Load:</strong>
+    <%= @playbook.loadBase %> + STR
   </li>
 
   <li>
-    <strong>Hpbase:</strong>
-    <%= @playbook.hpBase %>
+    <strong>HP:</strong>
+    <%= @playbook.hpBase %> + Constitution
   </li>
 
   <li>
-    <strong>Damagedie:</strong>
-    <%= @playbook.damageDie %>
+    <strong>Damage:</strong>
+    d<%= @playbook.damageDie %>
   </li>
 
   <li>
     <strong>Gear:</strong>
-    <%= @playbook.gear %>
+    <%= markdown @playbook.gear %>
   </li>
 
   <li>
     <strong>Bonds:</strong>
-    <%= @playbook.bonds %>
+    <%= markdown @playbook.bonds %>
   </li>
 
   <li>

@@ -16,12 +16,16 @@ defmodule Playbook.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/bard", PageController, :start
-    get "/bard/2", PageController, :gear
 
-    resources "/playbooks", PlaybookController
 
     get "/:slug/", PageController, :show
+    get "/:slug/adv/", PageController, :gear
+  end
+
+
+  scope "/admin", Playbook do
+    pipe_through :browser # Use the default browser stack
+    resources "/playbooks", PlaybookController
   end
 
   # Other scopes may use custom stacks.

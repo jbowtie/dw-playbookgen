@@ -5,12 +5,9 @@
     <tr>
       <th>Name</th>
       <th>Slug</th>
-      <th>Loadbase</th>
-      <th>Hpbase</th>
-      <th>Damagedie</th>
-      <th>Gear</th>
-      <th>Bonds</th>
-      <th>Namelist</th>
+      <th>Load</th>
+      <th>HP</th>
+      <th>Damage</th>
 
       <th></th>
     </tr>
@@ -19,13 +16,9 @@
 <%= for playbook <- @playbooks do %>
     <tr>
       <td><%= playbook.name %></td>
-      <td><%= playbook.slug %></td>
       <td><%= playbook.loadBase %></td>
       <td><%= playbook.hpBase %></td>
       <td><%= playbook.damageDie %></td>
-      <td><%= playbook.gear %></td>
-      <td><%= playbook.bonds %></td>
-      <td><%= playbook.nameList %></td>
 
       <td class="text-right">
         <%= link "Show", to: playbook_path(@conn, :show, playbook), class: "btn btn-default btn-xs" %>

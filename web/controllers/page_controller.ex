@@ -7,16 +7,13 @@ defmodule Playbook.PageController do
     render conn, "index.html"
   end
 
-  def start(conn, _params) do
-    render conn, "Bard1.html"
-  end
-
   def show(conn, %{"slug" => slug}) do
     playbook = Repo.get_by!(Playbook, slug: slug)
     render conn, "Playbook.Main.html", book: playbook
   end
 
-  def gear(conn, _params) do
-    render conn, "Bard2.html"
+  def gear(conn, %{"slug" => slug}) do
+    playbook = Repo.get_by!(Playbook, slug: slug)
+    render conn, "Playbook.Page2.html", book: playbook
   end
 end
