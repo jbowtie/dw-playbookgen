@@ -1,18 +1,18 @@
-    <div id="page-container">
-        <div id="pf1" class="pf">
-            <img class="logo" src="/images/DWlogo.png" />
-            <h1><%= @book.name %></h1>
-            <main>
-            <section id="name">
-                <h2 class="ff4 ls0 fillin">NAME</h2>
-                <div>
-                    <p class="ff5 sm"><%= @book.nameList %></p>
-                </div>
-            </section>
+<div id="page-container">
+    <div id="pf1" class="pf">
+        <img class="logo" src="/images/DWlogo.png" />
+        <h1><%= @book.name %></h1>
+        <main>
+          <section id="name">
+            <h2 class="ff4 ls0 fillin">NAME</h2>
+            <div>
+              <p class="ff5 sm"><%= @book.nameList %></p>
+            </div>
+          </section>
 
-            <section class="detail">
-                <div class="look">
-                    <h2 class="ff4 inv">Look</h2>
+          <section class="detail">
+            <div class="look">
+              <h2 class="ff4 inv">Look</h2>
                     <p class="ff5">Choose one for each, or write your own:</p>
                     <p class="ff2"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
                     <p class="ff2"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
@@ -77,7 +77,7 @@
                 <% end %>
                 </div>
             </section>
-            </main>
+          </main>
 
                 <aside class="col2">
                     <div style="display:flex;margin-bottom:2.3em;">
