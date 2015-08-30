@@ -68,7 +68,8 @@ background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 .ff5{font-family:ff5;line-height:0.977539;font-style:normal;font-weight:normal;}
 
 .fc0{color:rgb(35,31,32);}
-p, ul {color:rgb(101,98,99);}
+//p, ul {color:rgb(101,98,99);}
+p, ul {color:#333;}
 b, strong {color:black;}
 
 h1 {
@@ -96,7 +97,7 @@ p.sm {
     font-size:0.4rem;
 }
 em{font-family:ff5;font-style:normal;font-weight:normal;}
-b, strong, h3 {font-family:ff2;font-style:normal;font-weight:normal;}
+b, strong, h3 {font-family:Fontin,ff2;font-style:normal;font-weight:bold;}
 h3 {
     font-size:0.6rem;
     margin:0;

@@ -29,3 +29,15 @@ defmodule Playbook.Playbook do
     |> cast(params, @required_fields, @optional_fields)
   end
 end
+
+# add pitch (text)
+# Option label (string); default RACE
+# Drive label (string); default ALIGNMENT
+# -1 unticked level 1
+# 1 starting
+# 2 advanced
+# 6 master
+# -2 option
+# -3 drive
+# 0 special
+# 100 death
