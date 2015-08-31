@@ -7,31 +7,27 @@
                     <h2 class="ff4 inv">Advanced Moves</h2>
                     <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
                     <div style="-moz-column-count: 2;">
-                <%= for m <- advanced @book.moves do %>
-                    <article>
-                        <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
-                        <%= markdown m.desc %>
-                    </article>
-                <% end %>
+                      <%= for m <- advanced @book.moves do %>
                         <article>
-                            <h3 class="ff2"><i class="fa fa-square-o"></i>Multiclass Dabbler</h3>
-                            <p class="ff3">Get one move from another class. Treat your level as one lower for choosing the move.</p>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
                         </article>
+                      <% end %>
                     </div>
                     <p class="ff5 master">When you gain a level from 6-10, you may choose from these moves.</p>
                     <div style="-moz-column-count: 2;">
-                <%= for m <- master @book.moves do %>
-                    <article>
-                        <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
-                        <p class="ff5"><%= m.usage %></p>
-                        <%= markdown m.desc %>
-                    </article>
-                <% end %>
+                      <%= for m <- master @book.moves do %>
                         <article>
-                            <h3 class="ff2"><i class="fa fa-square-o"></i>Healing Chorus</h3>
-                            <p class="ff5">Replaces: Healing Song</p>
-                            <p class="ff3">When you <b>heal with Arcane Art</b>, you heal +2d8 damage.</p>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
                         </article>
+                      <% end %>
                     </div>
                 </section>
             </main>

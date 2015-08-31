@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Slug</th>
       <th>Load</th>
       <th>HP</th>
       <th>Damage</th>
@@ -23,6 +22,7 @@
       <td class="text-right">
         <%= link "Show", to: playbook_path(@conn, :show, playbook), class: "btn btn-default btn-xs" %>
         <%= link "Edit", to: playbook_path(@conn, :edit, playbook), class: "btn btn-default btn-xs" %>
+        <%= link "Moves", to: playbook_move_path(@conn, :index, playbook), class: "btn btn-default btn-xs" %>
         <%= link "Delete", to: playbook_path(@conn, :delete, playbook), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
