@@ -16,9 +16,9 @@
       <td><%= move.level %></td>
 
       <td class="text-right">
-        <%= link "Show", to: move_path(@conn, :show, move), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: move_path(@conn, :edit, move), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: move_path(@conn, :delete, move), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= link "Show", to: playbook_move_path(@conn, :show, @playbook, move), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: playbook_move_path(@conn, :edit, @playbook, move), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: playbook_move_path(@conn, :delete, @playbook, move), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
 <% end %>

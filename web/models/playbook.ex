@@ -10,13 +10,16 @@ defmodule Playbook.Playbook do
     field :gear, :string
     field :bonds, :string
     field :nameList, :string
+    field :option_label, :string
+    field :drive_label, :string
+    field :summary, :string
 
     has_many :moves, Playbook.Move
     timestamps
   end
 
   @required_fields ~w(name slug loadBase hpBase damageDie gear bonds nameList)
-  @optional_fields ~w()
+  @optional_fields ~w(option_label drive_label summary)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -30,9 +33,6 @@ defmodule Playbook.Playbook do
   end
 end
 
-# add pitch (text)
-# Option label (string); default RACE
-# Drive label (string); default ALIGNMENT
 # -1 unticked level 1
 # 1 starting
 # 2 advanced

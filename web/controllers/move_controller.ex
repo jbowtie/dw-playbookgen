@@ -40,10 +40,11 @@ defmodule Playbook.MoveController do
     render(conn, "show.html", move: move)
   end
 
-  def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"playbook_id" => pbid, "id" => id}) do
+    playbook = Repo.get!(Playbook, pbid)
     move = Repo.get!(Move, id)
     changeset = Move.changeset(move)
-    render(conn, "edit.html", move: move, changeset: changeset)
+    render(conn, "edit.html", move: move, changeset: changeset, playbook: playbook)
   end
 
   def update(conn, %{"id" => id, "move" => move_params}) do

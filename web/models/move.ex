@@ -26,9 +26,4 @@ defmodule Playbook.Move do
     |> cast(params, @required_fields, @optional_fields)
   end
 
-  def starting(query) do
-    from m in query,
-    where: m.level == 1
-  end
-
 end

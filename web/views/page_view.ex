@@ -14,4 +14,10 @@ defmodule Playbook.PageView do
   def master(moves) do
     Enum.filter(moves, &(&1.level == 6)) |> Enum.sort_by(&(&1.title))
   end
+  def motivation(moves) do
+    Enum.filter(moves, &(&1.level == 20)) |> Enum.sort_by(&(&1.title))
+  end
+  def specials(moves) do
+    Enum.filter(moves, &(&1.level == 30)) |> Enum.sort_by(&(&1.title))
+  end
 end

@@ -6,7 +6,7 @@
           <section id="name">
             <h2 class="ff4 ls0 fillin">NAME</h2>
             <div>
-              <p class="ff5 sm"><%= @book.nameList %></p>
+              <div class="sm" style="font-style:italic;"><%= markdown @book.nameList %></div>
             </div>
           </section>
 
@@ -14,10 +14,10 @@
             <div class="look">
               <h2 class="ff4 inv">Look</h2>
                     <p class="ff5">Choose one for each, or write your own:</p>
-                    <p class="ff2"><span>BODY:</span><span class="ff3"> Fit, well-fed, thin</span></p>
-                    <p class="ff2"><span>EYES:</span><span class="ff3"> Knowing, fiery , joyous</span></p>
-                    <p class="ff2"><span>HAIR:</span><span class="ff3"> Fancy, wild, stylish cap</span></p>
-                    <p class="ff2"><span>CLOTHES:</span><span class="ff3"> Finery, traveling, poor</span></p>
+                    <p><b>BODY:</b><span class="ff3"> Fit, well-fed, thin</span></p>
+                    <p><b>EYES:</b><span class="ff3"> Knowing, fiery , joyous</span></p>
+                    <p><b>HAIR:</b><span class="ff3"> Fancy, wild, stylish cap</span></p>
+                    <p><b>CLOTHES:</b><span class="ff3"> Finery, traveling, poor</span></p>
                     <p class="bp"> </p>
                 </div>
                 <div class="combat">
@@ -79,81 +79,60 @@
             </section>
           </main>
 
-                <aside class="col2">
-                    <div style="display:flex;margin-bottom:2.3em;">
-                        <h2 class="ff4" style="margin-top:0.4em;flex:1;">LEVEL</h2>
-                        <h2 class="ff4 fillin" style="margin-top:0;flex:1;">XP</h2>
-                    </div>
-
-                    <section>
-                        <h2 class="ff4 inv">Alignment</h2>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3 class="ff2">Good</h3>
-                                <p>Perform your art to aid someone else.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3 class="ff2">Neutral</h3>
-                                <p>Avoid a conflict or defuse a tense situation.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3 class="ff2">Chaotic</h3>
-                                <p>Spur others to significant and unplanned decisive action.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div style="flex-grow:1;">
-                                <p class="bp"> </p>
-                                <p class="bp"> </p>
-                                <p class="bp"> </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h2 class="ff4 inv">Bonds</h2>
-                        <p class="ff5">Fill in at least one with the name of a companion, or write your own.</p>
-                        <%= {:safe, Earmark.to_html @book.bonds} %>
-                        <p class="bp"> </p>
-                        <p class="bp"> </p>
-                        <p class="bp"> </p>
-                    </section>
-                    <section>
-                        <h2 class="ff4 inv">Race</h2>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3>Android</h3>
-                                <p>When you <b>enter an important location</b> (your call) you can ask the GM for one fact from the history of that location.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3>Elf</h3>
-                                <p>When you use your <b>Arcane Art</b>, on a 12+, choose an extra effect.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
-                            <div>
-                                <h3>Human</h3>
-                                <p>When you <b>first enter a civilized settlement</b> someone who respects the custom of hospitality to minstrels will take you in as their guest.</p>
-                            </div>
-                            <div style="flex-grow:1;">
-                                <p class="bp"> </p>
-                                <p class="bp"> </p>
-                                <p class="bp"> </p>
-                            </div>
-                        </div>
-                    </section>
-                </aside>
+          <aside class="col2">
+            <div style="display:flex;margin-bottom:2.3em;">
+              <h2 class="ff4" style="margin-top:0.4em;flex:1;">LEVEL</h2>
+              <h2 class="ff4 fillin" style="margin-top:0;flex:1;">XP</h2>
             </div>
+
+            <section>
+              <h2 class="ff4 inv"><%= @book.drive_label %></h2>
+              <%= for m <- motivation @book.moves do %>
+                <div>
+                  <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                  <div>
+                    <h3><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                  </div>
+                </div>
+              <% end %>
+              <div>
+                <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                <div style="flex-grow:1;">
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="ff4 inv">Bonds</h2>
+              <p class="ff5">Fill in at least one with the name of a companion, or write your own.</p>
+              <%= {:safe, Earmark.to_html @book.bonds} %>
+              <p class="bp"> </p>
+              <p class="bp"> </p>
+              <p class="bp"> </p>
+            </section>
+            <section>
+              <h2 class="ff4 inv"><%= @book.option_label %></h2>
+              <%= for m <- specials @book.moves do %>
+                <div>
+                  <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                  <div>
+                    <h3><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                  </div>
+                </div>
+              <% end %>
+              <div>
+                <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                <article style="flex-grow:1;">
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                </article>
+              </div>
+            </section>
+          </aside>
         </div>
+      </div>
