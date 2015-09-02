@@ -4,7 +4,8 @@ defmodule Playbook.PageController do
   alias Playbook.Playbook
 
   def index(conn, _params) do
-    render conn, "index.html"
+    playbooks = Repo.all(Playbook) |> Enum.sort_by(&(&1.name))
+    render conn, "index.html", books: playbooks
   end
 
   def show(conn, %{"slug" => slug}) do

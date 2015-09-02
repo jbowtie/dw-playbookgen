@@ -33,11 +33,3 @@ defmodule Playbook.Playbook do
   end
 end
 
-# -1 unticked level 1
-# 1 starting
-# 2 advanced
-# 6 master
-# -2 option
-# -3 drive
-# 0 special
-# 100 death
