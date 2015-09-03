@@ -161,10 +161,16 @@ ul, ol {
     box-sizing:border-box;
     border-radius:0.25em;
 }
-h2.inv {
+.inv {
     background-color:black;
     color:white;
     padding:0.3em 0.25em 0.2em;
+}
+h2.inv {
+    padding:0.3em 0.25em 0.2em;
+}
+aside section {
+    margin-bottom: 1em;
 }
 .cbox {
     opacity:0.3;

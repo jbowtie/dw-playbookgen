@@ -29,5 +29,5 @@
 
 </ul>
 
-<%= link "Edit", to: move_path(@conn, :edit, @move) %>
-<%= link "Back", to: move_path(@conn, :index) %>
+<%= link "Edit", to: playbook_move_path(@conn, :edit, @move.playbook, @move) %>
+<%= link "Back", to: playbook_move_path(@conn, :index, @move.playbook) %>

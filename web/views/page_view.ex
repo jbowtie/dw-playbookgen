@@ -8,6 +8,9 @@ defmodule Playbook.PageView do
   def starting(moves) do
     Enum.filter(moves, &(&1.level == 1)) |> Enum.sort_by(&(&1.title))
   end
+  def startingaside(moves) do
+    Enum.filter(moves, &(&1.level == 0)) |> Enum.sort_by(&(&1.title))
+  end
   def advanced(moves) do
     Enum.filter(moves, &(&1.level == 2)) |> Enum.sort_by(&(&1.title))
   end

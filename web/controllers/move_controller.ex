@@ -55,7 +55,7 @@ defmodule Playbook.MoveController do
       {:ok, move} ->
         conn
         |> put_flash(:info, "Move updated successfully.")
-        |> redirect(to: move_path(conn, :show, move))
+        |> redirect(to: playbook_move_path(conn, :show, move.playbook_id, move))
       {:error, changeset} ->
         render(conn, "edit.html", move: move, changeset: changeset)
     end

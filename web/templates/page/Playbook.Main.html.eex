@@ -4,7 +4,7 @@
         <h1><%= @book.name %></h1>
         <main>
           <section id="name">
-            <h2 class="ff4 ls0 fillin">NAME</h2>
+            <h2 class="ff4 fillin">NAME</h2>
             <div>
               <div class="sm" style="font-style:italic;"><%= markdown @book.nameList %></div>
             </div>
@@ -14,10 +14,10 @@
             <div class="look">
               <h2 class="ff4 inv">Look</h2>
                     <p class="ff5">Choose one for each, or write your own:</p>
-                    <p><b>BODY:</b><span class="ff3"> Fit, well-fed, thin</span></p>
-                    <p><b>EYES:</b><span class="ff3"> Knowing, fiery , joyous</span></p>
-                    <p><b>HAIR:</b><span class="ff3"> Fancy, wild, stylish cap</span></p>
-                    <p><b>CLOTHES:</b><span class="ff3"> Finery, traveling, poor</span></p>
+                    <p><b>BODY:</b> Fit, well-fed, thin</p>
+                    <p><b>EYES:</b> Knowing, fiery , joyous</p>
+                    <p><b>HAIR:</b> Fancy, wild, stylish cap</p>
+                    <p><b>CLOTHES:</b> Finery, traveling, poor</p>
                     <p class="bp"> </p>
                 </div>
                 <div class="combat">
@@ -132,6 +132,14 @@
                   <p class="bp"> </p>
                 </article>
               </div>
+            </section>
+            <section>
+            <%= for m <- startingaside @book.moves do %>
+                <article>
+                    <h3 class="ff4 inv"><i class="fa fa-check-square-o"></i><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                </article>
+            <% end %>
             </section>
           </aside>
         </div>
