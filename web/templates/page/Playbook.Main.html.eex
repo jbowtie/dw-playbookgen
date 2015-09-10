@@ -143,4 +143,62 @@
             </section>
           </aside>
         </div>
+        <div id="pf2" class="pf adv">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1><%= @book.name %></h1>
+            <main>
+                <section class="moves">
+                    <h2 class="ff4 inv">Advanced Moves</h2>
+                    <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
+                    <div style="-moz-column-count: 2;">
+                      <%= for m <- advanced @book.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                    <p class="ff5 master">When you gain a level from 6-10, you may choose from these moves.</p>
+                    <div style="-moz-column-count: 2;">
+                      <%= for m <- master @book.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+            </main>
+            <aside class="col2">
+                <section>
+                    <h2 class="ff4 inv coin">Coin<img src="/images/coin.png" /></h2>
+                </section>
+                <section class="gear">
+                    <hgroup>
+                    <h2 class="ff4 inv" style="font-size:0.8em;">Starting Gear<img src="/images/gear.png" /></h2>
+                    <p class="ff3 sm"><span>Max Load (<%= @book.loadBase %>+STR)</span><span>Current</span></p>
+                    </hgroup>
+                    <%= {:safe, Earmark.to_html @book.gear} %>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                </section>
+            </aside>
+        </div>
       </div>
