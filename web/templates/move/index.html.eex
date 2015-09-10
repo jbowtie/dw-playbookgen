@@ -1,10 +1,12 @@
 <h2><%= @playbook.name %> moves</h2>
 
+<%= link "New move", to: playbook_move_path(@conn, :new, @playbook), class: "btn btn-primary" %>
+
 <table class="table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Level</th>
+      <th>Move Type</th>
 
       <th></th>
     </tr>
@@ -13,7 +15,7 @@
 <%= for move <- @moves do %>
     <tr>
       <td><%= move.title %></td>
-      <td><%= move.level %></td>
+      <td><%= level_desc move.level %></td>
 
       <td class="text-right">
         <%= link "Show", to: playbook_move_path(@conn, :show, @playbook, move), class: "btn btn-default btn-xs" %>

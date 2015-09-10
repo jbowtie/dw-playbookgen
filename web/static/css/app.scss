@@ -128,6 +128,11 @@ img.logo {
     left:1rem;
 }
 
+.adv img.logo {
+    left:auto;
+    right:1rem;
+}
+
 h1 {
     transform:rotate(-90deg);
     transform-origin:0.5em 50%; 
@@ -140,6 +145,10 @@ h1 {
     bottom:0;
     text-align:right;
 }
+.adv h1 {
+    transform: translate(31.6875rem, 0) rotate(-90deg);
+}
+
 ul, ol {
     margin:0;
     padding:0 0 0 1em;
@@ -155,6 +164,13 @@ ul, ol {
     width:9rem;
     padding:0 0.5em;
 }
+
+
+.adv .col2 {
+    right:auto;
+    left:1rem;
+}
+
 .fillin {
     padding:0.3em 0.25em 0.2em;
     border:1px solid black;
@@ -231,6 +247,10 @@ aside section {
 }
 main {
     width:19.9375rem;height:43.75rem;margin-left:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
+}
+.adv main {
+    width:19.9375rem;height:43.75rem;margin-right:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
+    margin-left:11.75rem;
 }
 .pf {
     width: 37.20475rem;
