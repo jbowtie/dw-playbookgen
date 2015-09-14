@@ -8,8 +8,7 @@
   </li>
 
   <li>
-    <%= link "Page1", to: page_path(@conn, :show, @playbook.slug) %>
-    <%= link "Page2", to: page_path(@conn, :gear, @playbook.slug) %>
+    <%= link "Playbook", to: page_path(@conn, :show, @playbook.slug) %>
   </li>
 
   <li>
@@ -38,7 +37,7 @@
   </li>
 
   <li>
-    <strong>Namelist:</strong>
+    <strong>Names:</strong>
     <%= @playbook.nameList %>
   </li>
 

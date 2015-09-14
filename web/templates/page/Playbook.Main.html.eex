@@ -14,10 +14,7 @@
             <div class="look">
               <h2 class="ff4 inv">Look</h2>
                     <p class="ff5">Choose one for each, or write your own:</p>
-                    <p><b>BODY:</b> Fit, well-fed, thin</p>
-                    <p><b>EYES:</b> Knowing, fiery , joyous</p>
-                    <p><b>HAIR:</b> Fancy, wild, stylish cap</p>
-                    <p><b>CLOTHES:</b> Finery, traveling, poor</p>
+                    <%= markdown @book.look %>
                     <p class="bp"> </p>
                 </div>
                 <div class="combat">

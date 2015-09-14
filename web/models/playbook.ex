@@ -13,13 +13,14 @@ defmodule Playbook.Playbook do
     field :option_label, :string
     field :drive_label, :string
     field :summary, :string
+    field :look, :string
 
     has_many :moves, Playbook.Move
     timestamps
   end
 
   @required_fields ~w(name slug loadBase hpBase damageDie gear bonds nameList)
-  @optional_fields ~w(option_label drive_label summary)
+  @optional_fields ~w(option_label drive_label summary look)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
