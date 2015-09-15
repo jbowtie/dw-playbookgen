@@ -11,7 +11,7 @@
     .loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}
 }
 @media print{
-    @page{margin:0}
+    @page{size:A4;margin:0}
     html{margin:0}
     body{margin:0;-webkit-print-color-adjust:exact}
     #page-container{width:auto;height:auto;overflow:visible;background-color:transparent}
@@ -137,7 +137,7 @@ h1 {
     transform-origin:0.5em 50%; 
     white-space:pre;
     font-size:3.4166875em;
-    width:12.5em; 
+    width:13.25em; 
     margin:0.3em 0.35em 1em;
     position:absolute;
     left:0;
@@ -145,7 +145,7 @@ h1 {
     text-align:right;
 }
 .adv h1 {
-    transform: translate(31.6875rem, 0) rotate(-90deg);
+    transform: translate(32.6875rem, 0) rotate(-90deg);
 }
 
 ul, ol {
@@ -245,15 +245,17 @@ aside section {
     padding-left: 1.5em;
 }
 main {
-    width:19.9375rem;height:43.75rem;margin-left:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
+    width:20.9375rem;height:46.75rem;margin-left:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
 }
 .adv main {
-    width:19.9375rem;height:43.75rem;margin-right:5.8125rem;margin-top:2.35rem;font-size:0.75rem;
+    width:20.9375rem;margin-right:5.8125rem;
     margin-left:11.75rem;
 }
 .pf {
-    width: 37.20475rem;
-    height:52.61811025rem;
+    width: 38.20475rem;
+    height:54.61811025rem;
+    //width:49.625rem; //210mm
+    //height:70.1875rem; //297mm
     text-rendering: optimizeLegibility;
 }
 
