@@ -1,4 +1,6 @@
-# Playbook
+# Dungeon World Playbook Creator
+
+This little app (built using the Phoenix Framework) allows you to quickly create custom Dungeon World playbooks that look nice.
 
 To start your new Phoenix application:
 
