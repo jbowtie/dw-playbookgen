@@ -64,6 +64,8 @@ html {
     }
 }
 
+body{margin:0;}
+
 .ff2{font-family:ff2;line-height:0.926758;font-style:normal;font-weight:normal;}
 .ff3{font-family:ff3;font-style:normal;font-weight:normal;}
 .ff4{font-family:ff4;font-style:normal;font-weight:normal;}
@@ -369,3 +371,31 @@ aside section > div {
     margin-top: 1.5em;
 }
 
+.campaigns {
+    background:url(/images/tweed.png);
+    font-size:2rem;
+    box-sizing:border-box;
+    article {
+        box-sizing:border-box;
+        background:url(/images/clean_textile.png);
+        border-radius:0.25rem;
+        margin:0 auto 1.5rem;
+        padding:0.5rem;
+    }
+    main {
+        height:auto;
+        max-width:700px;
+        padding:0.5rem;
+        box-sizing:border-box;
+        margin:0 auto;
+    }
+    header {
+        padding: 0.5rem;
+    }
+    h2 {
+        color:white;
+        font-family:ff2;
+        margin:0 auto;
+        text-align:center;
+    }
+}

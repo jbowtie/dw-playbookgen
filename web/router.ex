@@ -17,10 +17,9 @@ defmodule Playbook.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-
+    get "/campaigns/", PageController, :campaigns
 
     get "/:slug/", PageController, :show
-    get "/:slug/adv/", PageController, :gear
   end
 
 

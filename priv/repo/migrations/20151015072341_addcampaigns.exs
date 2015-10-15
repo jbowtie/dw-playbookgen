@@ -5,7 +5,7 @@ defmodule Playbook.Repo.Migrations.Addcampaigns do
     create table(:campaigns) do
       add :name, :string
       add :slug, :string
-      add :pitch, :string
+      add :pitch, :text
       timestamps
     end
     create table(:campaign_playbook) do
