@@ -1,0 +1,26 @@
+<h2>Listing campaigns</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for campaign <- @campaigns do %>
+    <tr>
+      <td><%= campaign.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: campaign_path(@conn, :show, campaign), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: campaign_path(@conn, :edit, campaign), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: campaign_path(@conn, :delete, campaign), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New campaign", to: campaign_path(@conn, :new) %>

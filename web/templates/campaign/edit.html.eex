@@ -1,0 +1,6 @@
+<h2>Edit campaign</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: campaign_path(@conn, :update, @campaign) %>
+
+<%= link "Back", to: campaign_path(@conn, :index) %>
