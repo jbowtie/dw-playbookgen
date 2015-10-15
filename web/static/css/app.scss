@@ -398,4 +398,27 @@ aside section > div {
         margin:0 auto;
         text-align:center;
     }
+    .books {
+        transform: rotate(1.01724deg);
+        background-image:linear-gradient(to bottom, #FFF8B9 0px, #FFF386 100%);
+        box-shadow:1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+        width:7.5em;
+        padding: 1em 1em 0.5em;
+        margin: 0 -1.5em 1em 1em;
+        float:right;
+    }
+    h4 {
+        text-align:center;
+        font-size:0.4rem;
+        color:#333;
+        margin:0 0 0.5em;
+        text-transform:uppercase;
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        line-height:1.8;
+    }
+
 }

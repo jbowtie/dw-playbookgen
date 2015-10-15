@@ -6,6 +6,17 @@
 <main>
 <%= for campaign <- @campaigns do %>
 <article>
+  <section class="books">
+    <h4>PLAYBOOKS</h4>
+    <ul>
+      <li><a href="#">Bard</a></li>
+      <li>Cleric</li>
+      <li>Druid</li>
+      <li>Fighter</li>
+      <li>Paladin</li>
+      <li>...and 6 more!</li>
+    </ul>
+  </section>
   <h3><%= campaign.name %></h3>
   <%= markdown campaign.pitch %>
   <p><%= link "Playbooks", to: page_path(@conn, :show, campaign.slug) %></p>
