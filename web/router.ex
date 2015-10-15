@@ -30,6 +30,7 @@ defmodule Playbook.Router do
         resources "/moves", MoveController
     end
     resources "/moves", MoveController
+    resources "/campaigns", CampaignController
   end
 
   # Other scopes may use custom stacks.
