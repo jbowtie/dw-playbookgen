@@ -30,7 +30,7 @@ defmodule Playbook.CampaignController do
   end
 
   def show(conn, %{"id" => id}) do
-    campaign = Repo.get!(Campaign, id)
+    campaign = Repo.get!(Campaign, id) |> Repo.preload [:playbooks]
     render(conn, "show.html", campaign: campaign)
   end
 

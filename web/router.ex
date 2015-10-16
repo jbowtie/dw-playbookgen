@@ -13,15 +13,6 @@ defmodule Playbook.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Playbook do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-    get "/campaigns/", PageController, :campaigns
-
-    get "/:slug/", PageController, :show
-  end
-
 
   scope "/admin", Playbook do
     pipe_through :browser # Use the default browser stack
@@ -33,7 +24,18 @@ defmodule Playbook.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Playbook do
-  #   pipe_through :api
-  # end
+  scope "/api", Playbook do
+    pipe_through :api
+    resources "/campaign_playbook", CampaignMembershipController, except: [:new, :edit]
+  end
+
+  scope "/", Playbook do
+    pipe_through :browser # Use the default browser stack
+
+    get "/", PageController, :index
+    get "/campaigns/", PageController, :campaigns
+
+    get "/:slug/", PageController, :show
+  end
+
 end

@@ -9,12 +9,9 @@
   <section class="books">
     <h4>PLAYBOOKS</h4>
     <ul>
-      <li><a href="#">Bard</a></li>
-      <li>Cleric</li>
-      <li>Druid</li>
-      <li>Fighter</li>
-      <li>Paladin</li>
-      <li>...and 6 more!</li>
+      <%= for p <- campaign.playbooks |> Enum.sort_by(&(&1.name)) do %>
+        <li><%= p.name %></li>
+      <%end%>
     </ul>
   </section>
   <h3><%= campaign.name %></h3>

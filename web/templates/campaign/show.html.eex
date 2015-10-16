@@ -1,7 +1,12 @@
-<h2>Show campaign</h2>
+<h2><%= @campaign.name %></h2>
 
+<%= markdown @campaign.pitch %>
+
+<h3>Playbooks</h3>
 <ul>
-
+  <%= for p <- @campaign.playbooks do %>
+    <li><%= p.name %></li>
+  <%end%>
 </ul>
 
 <%= link "Edit", to: campaign_path(@conn, :edit, @campaign) %>
