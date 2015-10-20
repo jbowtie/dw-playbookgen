@@ -1,0 +1,15 @@
+<div class="campaigns">
+<header>
+  <h2><%= @campaign.name %></h2>
+</header>
+
+<main>
+<%= for book <- @books do %>
+<article>
+  <h3><%= book.name %></h3>
+  <%= markdown book.summary %>
+  <p><%= link "Playbook", to: page_path(@conn, :show, book.slug) %></p>
+</article>
+<% end %>
+</main>
+</div>

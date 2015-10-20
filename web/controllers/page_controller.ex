@@ -18,7 +18,7 @@ defmodule Playbook.PageController do
 
   def playbook_list(conn, %{"slug" => slug}) do
     campaign = Repo.get_by!(Campaign, slug: slug) |> Repo.preload [:playbooks]
-    render(conn, "index.html", books: campaign.playbooks |> Enum.sort_by(&(&1.name)))
+    render(conn, "playbooks.html", campaign: campaign, books: campaign.playbooks |> Enum.sort_by(&(&1.name)))
   end
 
   def show(conn, %{"slug" => slug}) do

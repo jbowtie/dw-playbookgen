@@ -16,7 +16,7 @@
   </section>
   <h3><%= campaign.name %></h3>
   <%= markdown campaign.pitch %>
-  <p><%= link "Playbooks", to: page_path(@conn, :show, campaign.slug) %></p>
+  <p><%= link "Choose a playbook", to: page_path(@conn, :playbook_list, campaign.slug) %></p>
 </article>
 <% end %>
 </main>
