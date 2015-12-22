@@ -1,6 +1,5 @@
 defmodule Playbook.Move do
   use Playbook.Web, :model
-  import Ecto.Query
 
   schema "moves" do
     field :title, :string
