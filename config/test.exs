@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :playbook, Playbook.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "wilderness",
+  password: "dev",
   database: "playbook_test",
   pool: Ecto.Adapters.SQL.Sandbox
