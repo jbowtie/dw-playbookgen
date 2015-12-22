@@ -3,7 +3,7 @@ defmodule Playbook.Mixfile do
 
   def project do
     [app: :playbook,
-     version: "0.0.1",
+     version: "0.0.2",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
@@ -18,7 +18,7 @@ defmodule Playbook.Mixfile do
   def application do
     [mod: {Playbook, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :earmark, :edip]]
+                    :phoenix_ecto, :postgrex, :earmark, :connection, :decimal]]
   end
 
   # Specifies which paths to compile per environment
@@ -31,7 +31,7 @@ defmodule Playbook.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1"},
      {:phoenix_ecto, "~> 2.0"},
-     {:postgrex, ">= 0.0.0"},
+     {:postgrex, "~> 0.10.0"},
      {:phoenix_html, "~> 2.3"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:earmark, "~> 0.1.8" },
