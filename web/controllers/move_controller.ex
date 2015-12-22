@@ -22,7 +22,7 @@ defmodule Playbook.MoveController do
   def create(conn, %{"playbook_id" => pbid, "move" => move_params}) do
     playbook = Repo.get!(Playbook, pbid)
 
-    changeset = build(playbook, :moves)
+    changeset = build_assoc(playbook, :moves)
     |> Move.changeset(move_params)
 
     case Repo.insert(changeset) do
