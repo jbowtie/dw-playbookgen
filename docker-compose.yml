@@ -1,0 +1,21 @@
+# docker-compose.yml
+
+web:
+    image: local/playbook:latest
+    container_name: "pbweb"
+    environment:
+        DATABASE_URL: ecto://wilderness:dev@db/playbook_dev
+        PORT: 4000
+    links:
+        - db
+    ports:
+        - 4000:4000
+
+db:
+    image: postgres:latest
+    environment:
+        POSTGRES_USER: wilderness
+        POSTGRES_PASSWORD: dev
+        POSTGRES_DB: playbook_dev
+    volumes:
+        - pbdev:/var/lib/postgresql/data
