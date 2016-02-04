@@ -64,7 +64,15 @@ html {
     }
 }
 
-body{margin:0;}
+body{
+    margin:0;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures, contextual;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "alt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+}
 
 .ff2{font-family:ff2;line-height:0.926758;font-style:normal;font-weight:normal;}
 .ff3{font-family:ff3;font-style:normal;font-weight:normal;}
@@ -285,6 +293,10 @@ min-height:2em;
 
 .combat {
     flex:1;display:flex;flex-direction:column;justify-content:space-between;
+}
+
+.gear {
+    margin-top: 3em;
 }
 
 .combat h2, .gear h2 {
