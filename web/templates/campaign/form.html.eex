@@ -19,10 +19,13 @@
     <%= label f, :slug, "Slug", class: "control-label" %>
     <%= text_input f, :slug, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="row">
+  <div class="form-group col-md-6 full-height">
     <%= label f, :pitch, "Elevator Pitch", class: "control-label" %>
-    <%= textarea f, :pitch, class: "form-control" %>
+    <%= textarea f, :pitch, class: "form-control pad" %>
   </div>
+  <div class="markdn col-md-6 full-height">Preview</div>
+</div>
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
