@@ -22,9 +22,12 @@
   <div class="row">
   <div class="form-group col-md-6 full-height">
     <%= label f, :pitch, "Elevator Pitch", class: "control-label" %>
-    <%= textarea f, :pitch, class: "form-control pad" %>
+    <%= textarea f, :pitch, class: "form-control pad", style: "min-height:10em;" %>
   </div>
-  <div class="markdn col-md-6 full-height">Preview</div>
+  <div class="col-md-6 full-height">
+    <h3>Preview</h3>
+    <div class="markdn">Preview</div>
+  </div>
 </div>
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

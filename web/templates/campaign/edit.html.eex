@@ -3,4 +3,11 @@
 <%= render "form.html", changeset: @changeset,
                         action: campaign_path(@conn, :update, @campaign) %>
 
+<h3>Playbooks</h3>
+<ul>
+  <%= for p <- @campaign.playbooks do %>
+    <li><%= link p.name, to: playbook_path(@conn, :edit, p) %></li>
+  <%end%>
+  <li><%= link "Add playbook", to: playbook_path(@conn, :new) %></li>
+</ul>
 <%= link "Back", to: campaign_path(@conn, :index) %>

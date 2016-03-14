@@ -35,7 +35,7 @@ defmodule Playbook.CampaignController do
   end
 
   def edit(conn, %{"id" => id}) do
-    campaign = Repo.get!(Campaign, id)
+    campaign = Repo.get!(Campaign, id) |> Repo.preload [:playbooks]
     changeset = Campaign.changeset(campaign)
     render(conn, "edit.html", campaign: campaign, changeset: changeset)
   end
