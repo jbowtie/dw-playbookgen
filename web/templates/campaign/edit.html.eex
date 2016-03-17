@@ -1,13 +1,20 @@
-<h2>Edit campaign</h2>
+<header>
+  <h1 class="ui block header">Edit campaign</h1>
+</header>
 
+<div class="ui grid">
+  <div class="twelve wide column">
 <%= render "form.html", changeset: @changeset,
-                        action: campaign_path(@conn, :update, @campaign) %>
+action: campaign_path(@conn, :update, @campaign) %>
+</div>
 
-<h3>Playbooks</h3>
-<ul>
+<div class="four wide column">
+<ul class="ui fluid right vertical menu" style="padding-left:0;">
+  <li class=" active item"><h3 class="header">Playbooks</h3></li>
   <%= for p <- @campaign.playbooks do %>
-    <li><%= link p.name, to: playbook_path(@conn, :edit, p) %></li>
+    <li class="link item"><%= link p.name, to: playbook_path(@conn, :edit, p) %></li>
   <%end%>
-  <li><%= link "Add playbook", to: playbook_path(@conn, :new) %></li>
+  <li class="item"><%= link "Add playbook", to: playbook_path(@conn, :new), class: "ui button" %></li>
 </ul>
-<%= link "Back", to: campaign_path(@conn, :index) %>
+</div>
+</div>
