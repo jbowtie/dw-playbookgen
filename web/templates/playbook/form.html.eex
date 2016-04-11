@@ -1,6 +1,6 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, [{:class, "ui form"}], fn f -> %>
   <%= if @changeset.action do %>
-    <div class="alert alert-danger">
+    <div class="ui message error">
       <p>Oops, something went wrong! Please check the errors below:</p>
       <ul>
         <%= for {attr, message} <- f.errors do %>
@@ -10,64 +10,70 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :name, "Name", class: "control-label" %>
     <%= text_input f, :name, class: "form-control" %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :slug, "Slug", class: "control-label" %>
     <%= text_input f, :slug, class: "form-control" %>
   </div>
-
-  <div class="form-group">
+  <div class="fields">
+  <div class="field">
     <%= label f, :hpBase, "Base HP", class: "control-label" %>
     <%= number_input f, :hpBase, class: "form-control" %>
+    <div class="ui tiny pointing basic blue label">Wizard 4, Cleric 6, Ranger 8, Fighter 10</div>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :damageDie, "Damage Die", class: "control-label" %>
     <%= number_input f, :damageDie, class: "form-control" %>
+    <div class="ui tiny pointing basic blue label">Wizard d4, Cleric d6, Ranger d8, Fighter d10</div>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :loadBase, "Base Load", class: "control-label" %>
     <%= number_input f, :loadBase, class: "form-control" %>
+    <div class="ui tiny pointing basic blue label">Wizard 7, Cleric 10, Ranger 11, Fighter 12</div>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= label f, :gear, "Gear", class: "control-label" %>
+  <div class="field">
+    <%= label f, :gear, "Starting Gear", class: "control-label" %>
     <%= textarea f, :gear, class: "form-control" %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :bonds, "Bonds", class: "control-label" %>
     <%= textarea f, :bonds, class: "form-control" %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :nameList, "List of Names", class: "control-label" %>
     <%= textarea f, :nameList, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="field">
     <%= label f, :option_label, "Label for specialization options (eg; race, specialization, manifestation)", class: "control-label" %>
     <%= text_input f, :option_label, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="field">
     <%= label f, :drive_label, "Label for motivation options (eg; alignment, drive)", class: "control-label" %>
     <%= text_input f, :drive_label, class: "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="field">
     <%= label f, :summary, "Elevator Pitch", class: "control-label" %>
     <%= textarea f, :summary, class: "form-control" %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= label f, :look, "Look", class: "control-label" %>
     <%= textarea f, :look, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-  </div>
+<div class="ui buttons">
+  <button class="ui button">Cancel</button>
+  <div class="or"></div>
+  <%= submit "Save", class: "ui positive button" %>
+</div>
 <% end %>

@@ -1,6 +1,11 @@
-<h2>Edit playbook</h2>
+<header>
+  <h1 class="ui block header">Edit playbook</h1>
+</header>
 
+<div class="ui grid">
+  <div class="twelve wide column">
 <%= render "form.html", changeset: @changeset,
                         action: playbook_path(@conn, :update, @playbook) %>
+</div>
+</div>
 
-<%= link "Back", to: playbook_path(@conn, :index) %>
