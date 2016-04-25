@@ -31,12 +31,12 @@ defmodule Playbook.PlaybookController do
   end
 
   def show(conn, %{"id" => id}) do
-    playbook = Repo.get!(Playbook, id)
+    playbook = Repo.get!(Playbook, id) |> Repo.preload [:moves]
     render(conn, "show.html", playbook: playbook)
   end
 
   def edit(conn, %{"id" => id}) do
-    playbook = Repo.get!(Playbook, id)
+    playbook = Repo.get!(Playbook, id) |> Repo.preload [:moves]
     changeset = Playbook.changeset(playbook)
     render(conn, "edit.html", playbook: playbook, changeset: changeset)
   end

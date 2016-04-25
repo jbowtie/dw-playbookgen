@@ -11,8 +11,8 @@
   <% end %>
 
   <div class="field">
-    <%= label f, :name, "Name", class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
+    <%= label f, :name, "Name", class: "" %>
+    <%= text_input f, :name, class: "" %>
   </div>
 
   <div class="field">
@@ -26,9 +26,33 @@
     <div class="ui tiny pointing basic blue label">Wizard 4, Cleric 6, Ranger 8, Fighter 10</div>
   </div>
 
-  <div class="field">
-    <%= label f, :damageDie, "Damage Die", class: "control-label" %>
-    <%= number_input f, :damageDie, class: "form-control" %>
+  <div class="inline fields">
+    <label>Damage Die</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button f, :damageDie, "4" %><label>d4</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button f, :damageDie, "6" %><label>d6</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button f, :damageDie, "8" %><label>d8</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button f, :damageDie, "10" %><label>d10</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= radio_button f, :damageDie, "12" %><label>d12</label>
+      </div>
+    </div>
     <div class="ui tiny pointing basic blue label">Wizard d4, Cleric d6, Ranger d8, Fighter d10</div>
   </div>
 
