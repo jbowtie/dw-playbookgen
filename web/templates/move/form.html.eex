@@ -11,17 +11,18 @@
   <% end %>
 
   <div class="field">
-    <%= label f, :title, "Title", class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
+    <%= label f, :title, "Title", class: "ui label" %>
+    <%= text_input f, :title, class: "form-control", required: "required" %>
   </div>
 
   <div class="field">
-    <%= label f, :usage, "Usage", class: "control-label" %>
+    <%= label f, :usage, "Usage", class: "ui label" %>
     <%= text_input f, :usage, class: "form-control" %>
+    <p class="ui small message"><i>Optional.</i> Used to show which moves are required or replaced. Example: "Requires: First Aid "</p>
   </div>
 
   <div class="field">
-    <%= label f, :desc, "Description", class: "control-label" %>
+    <%= label f, :desc, "Description", class: "ui label" %>
     <%= textarea f, :desc, class: "pad" %>
     <div class="ui raised segment">
       <a class="ui blue right ribbon label">
@@ -32,7 +33,7 @@
   </div>
 
   <div class="field">
-    <%= label f, :level, "Move Type", class: "control-label" %>
+    <%= label f, :level, "Move Type", class: "ui label" %>
     <%= select(f, :level, [
       "Starting": "1", 
       "Starting (special)": "0", 
@@ -43,10 +44,6 @@
       "Specialization": "30",
       "Death": "100" 
     ], class: "ui dropdown")%>
-    <!-- select id="move_level" name="move[level]" class="form-control">
-      <option value="20"><%= @playbook.drive_label %></option>
-      <option value="30"><%= @playbook.option_label %></option>
-    </select-->
   </div>
 
 <div class="ui buttons">

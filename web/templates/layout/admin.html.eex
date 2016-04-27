@@ -15,9 +15,9 @@
       <div class="ui container">
         <%= render @view_module, @view_template, assigns %>
       </div>
-    <script src="//oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.3.0/showdown.min.js"></script>
-    <script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <!-- script>
 window.onload = function() {
     var converter = new showdown.Converter();
     var pad = document.querySelector('textarea.pad');
@@ -33,6 +33,6 @@ window.onload = function() {
 
     convertTextAreaToMarkdown();
 };
-    </script>
+    </script -->
   </body>
 </html>
