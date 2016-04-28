@@ -23,13 +23,7 @@
 
   <div class="field">
     <%= label f, :desc, "Description", class: "ui label" %>
-    <%= textarea f, :desc, class: "pad" %>
-    <div class="ui raised segment">
-      <a class="ui blue right ribbon label">
-        <i class="edit icon"></i>Edit
-      </a>
-      <div class="markdn">Preview</div>
-    </div>
+    <%= textarea f, :desc, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">

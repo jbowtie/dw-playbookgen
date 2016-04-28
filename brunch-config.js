@@ -15,12 +15,15 @@ exports.config = {
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
        order: {
          after: [
-           'bower_components/uikit/js/components/htmleditor.js'
+           'htmleditor.js'
          ]
        }
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: {
+          'css/app.css':  /^(web\/static\/css)/,
+          'css/admin.css': /^(?!web\/static\/css)/
+      }
     },
     templates: {
       joinTo: 'js/app.js'

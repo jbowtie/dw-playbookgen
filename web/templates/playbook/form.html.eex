@@ -65,17 +65,17 @@
 
   <div class="field">
     <%= label f, :gear, "Starting Gear", class: "control-label" %>
-    <%= textarea f, :gear, class: "form-control" %>
+    <%= textarea f, :gear, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
     <%= label f, :bonds, "Bonds", class: "control-label" %>
-    <%= textarea f, :bonds, class: "form-control" %>
+    <%= textarea f, :bonds, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
     <%= label f, :nameList, "List of Names", class: "control-label" %>
-    <%= textarea f, :nameList, class: "form-control" %>
+    <%= textarea f, :nameList, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
   <div class="field">
     <%= label f, :option_label, "Label for specialization options (eg; race, specialization, manifestation)", class: "control-label" %>
@@ -87,12 +87,12 @@
   </div>
   <div class="field">
     <%= label f, :summary, "Elevator Pitch", class: "control-label" %>
-    <%= textarea f, :summary, class: "form-control" %>
+    <%= textarea f, :summary, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
     <%= label f, :look, "Look", class: "control-label" %>
-    <%= textarea f, :look, class: "form-control" %>
+    <%= textarea f, :look, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
 <div class="ui buttons">

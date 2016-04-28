@@ -1,0 +1,27 @@
+.uk-htmleditor-preview {
+
+    ol li {
+        position:relative;
+    }
+    ol li:before {
+        font-family: FontAwesome;
+        content:"\f096";
+        left: -2.14286em;
+        position:absolute;
+    }
+    ul, ol {
+        margin:0;
+        padding:0 0 0 1em;
+    }
+
+    .gear ul, ol {
+        padding-left: 0px;
+        margin-left: 2.14286em;
+        list-style-type: none;
+    }
+
+    em {
+        color:inherit;
+    }
+
+}
