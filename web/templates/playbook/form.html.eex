@@ -11,54 +11,38 @@
   <% end %>
 
   <div class="field">
-    <%= label f, :name, "Name", class: "" %>
-    <%= text_input f, :name, class: "" %>
+    <%= text_input f, :name, class: "ui input", required: "required" %>
+    <%= label f, :name, "Name" %>
   </div>
 
   <div class="field">
-    <%= label f, :slug, "Slug", class: "control-label" %>
-    <%= text_input f, :slug, class: "form-control" %>
+    <%= text_input f, :slug, class: "ui input" %>
+    <%= label f, :slug, "Slug" %>
   </div>
-  <div class="fields">
-  <div class="field">
-    <%= label f, :hpBase, "Base HP", class: "control-label" %>
-    <%= number_input f, :hpBase, class: "form-control" %>
-    <div class="ui tiny pointing basic blue label">Wizard 4, Cleric 6, Ranger 8, Fighter 10</div>
-  </div>
-
   <div class="inline fields">
     <label>Damage Die</label>
     <div class="field">
-      <div class="ui radio checkbox">
-        <%= radio_button f, :damageDie, "4" %><label>d4</label>
-      </div>
+      <%= radio_button f, :damageDie, "4" %>
+      <label class="ui button" for="playbook_damageDie_4"><img src="/images/d4.png" class="ui image" title="1d4, typical of a magician or non-combatant"/></label>
+      <%= radio_button f, :damageDie, "6" %>
+      <label class="ui button" for="playbook_damageDie_6"><img src="/images/d6.png" class="ui image" title="1d6, a good default for a life of adventure" /></label>
+      <%= radio_button f, :damageDie, "8" %>
+      <label class="ui button" for="playbook_damageDie_8"><img src="/images/d8.png" class="ui image" title="1d8, typical of a hunter or rogue" /></label>
+      <%= radio_button f, :damageDie, "10" %>
+      <label class="ui button" for="playbook_damageDie_10"><img src="/images/d10.png" class="ui image" title="1d10, typical of a seasoned warrior"/></label>
     </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <%= radio_button f, :damageDie, "6" %><label>d6</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <%= radio_button f, :damageDie, "8" %><label>d8</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <%= radio_button f, :damageDie, "10" %><label>d10</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <%= radio_button f, :damageDie, "12" %><label>d12</label>
-      </div>
-    </div>
-    <div class="ui tiny pointing basic blue label">Wizard d4, Cleric d6, Ranger d8, Fighter d10</div>
+  </div>
+  <div class="fields">
+  <div class="field">
+    <%= label f, :hpBase, "Base HP", class: "ui label" %>
+    <%= number_input f, :hpBase, class: "ui input", min: 4 %>
+    <div class="ui tiny pointing basic blue label">Wizard 4, Cleric 6, Ranger 8, Fighter 10</div>
   </div>
 
+
   <div class="field">
-    <%= label f, :loadBase, "Base Load", class: "control-label" %>
-    <%= number_input f, :loadBase, class: "form-control" %>
+    <%= label f, :loadBase, "Base Load", class: "ui label" %>
+    <%= number_input f, :loadBase, class: "ui input", min: 0 %>
     <div class="ui tiny pointing basic blue label">Wizard 7, Cleric 10, Ranger 11, Fighter 12</div>
   </div>
 </div>

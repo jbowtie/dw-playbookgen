@@ -11,19 +11,14 @@
   <% end %>
 
   <div class="field">
-    <%= label f, :title, "Title", class: "ui label" %>
-    <%= text_input f, :title, class: "form-control", required: "required" %>
+    <%= text_input f, :title, class: "ui input", required: "required" %>
+    <%= label f, :title, "Title" %>
   </div>
 
   <div class="field">
-    <%= label f, :usage, "Usage", class: "ui label" %>
-    <%= text_input f, :usage, class: "form-control" %>
+    <%= text_input f, :usage, class: "ui input" %>
+    <%= label f, :usage, "Usage" %>
     <p class="ui small message"><i>Optional.</i> Used to show which moves are required or replaced. Example: "Requires: First Aid "</p>
-  </div>
-
-  <div class="field">
-    <%= label f, :desc, "Description", class: "ui label" %>
-    <%= textarea f, :desc, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
@@ -40,9 +35,10 @@
     ], class: "ui dropdown")%>
   </div>
 
-<div class="ui buttons">
-  <button class="ui button">Cancel</button>
-  <div class="or"></div>
-  <%= submit "Save", class: "ui positive button" %>
-</div>
+  <div class="field">
+    <%= label f, :desc, "Description", class: "ui label" %>
+    <%= textarea f, :desc, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
+  </div>
+
+  <%= submit "Save", class: "ui positive right floated button" %>
 <% end %>

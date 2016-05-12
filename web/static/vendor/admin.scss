@@ -25,3 +25,36 @@
     }
 
 }
+
+.ui.form .field {
+   position:relative; 
+   input[type="text"] ~ label {
+       position:absolute;
+       top:0.67861429em;
+       font-size:1em;
+       line-height: 1.2142em;
+       left:1em;
+       transition: 0.2s ease all;
+       color:#666;
+       font-weight: 400;
+   }
+   input {
+       transition: 0.2s ease all;
+   }
+   input[type="text"]:focus, input[type="text"]:valid {
+       padding-top:1.67861429em;
+   }
+   input[type="text"]:focus ~ label, input[type="text"]:valid ~ label {
+       top:0.4em;
+       font-size: smaller;
+       font-weight: 700;
+       color: #2185d0;
+   }
+}
+main { padding:1em 0; }
+
+.ui.form .inline.fields .field {
+    & > input[type="radio"] {display:none;}
+    & > input[type="radio"] + label img{max-height:2.5em;}
+    & > input[type="radio"]:checked + label{color:#fff;background-color:#2185d0;}
+}

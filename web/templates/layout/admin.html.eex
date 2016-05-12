@@ -13,27 +13,16 @@
   </head>
 
   <body>
+  <%= if get_flash(@conn, :info) do %>
       <p class="ui message info" role="alert"><%= get_flash(@conn, :info) %></p>
+  <% end %>
       <main class="ui container">
         <%= render @view_module, @view_template, assigns %>
       </main>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <!-- script>
-window.onload = function() {
-    var converter = new showdown.Converter();
-    var pad = document.querySelector('textarea.pad');
-    var markdownArea = document.querySelector('.markdn');   
-
-    var convertTextAreaToMarkdown = function(){
-        var markdownText = pad.value;
-        html = converter.makeHtml(markdownText);
-        markdownArea.innerHTML = html;
-    };
-
-    pad.addEventListener('input', convertTextAreaToMarkdown);
-
-    convertTextAreaToMarkdown();
-};
-    </script -->
+    <script>$('select').dropdown();</script>
+    <footer>
+      TODO: usual palaver
+    </footer>
   </body>
 </html>

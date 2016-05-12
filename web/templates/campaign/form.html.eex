@@ -11,29 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= label f, :name, "Name", class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
+    <%= label f, :name, "Name", class: "ui label" %>
+    <%= text_input f, :name, class: "ui input" %>
   </div>
 
   <div class="field">
-    <%= label f, :slug, "Slug", class: "control-label" %>
-    <%= text_input f, :slug, class: "form-control" %>
+    <%= label f, :slug, "Slug", class: "ui label" %>
+    <%= text_input f, :slug, class: "ui input" %>
   </div>
 
-  <div class="field" style="display:none;">
-    <%= label f, :pitch, "Elevator Pitch", class: "control-label" %>
-    <%= textarea f, :pitch, class: "pad", rows: "30" %>
+  <div class="field">
+    <%= label f, :pitch, "Elevator Pitch", class: "ui label" %>
+    <%= textarea f, :pitch, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
-  <div class="ui raised segment">
-      <a class="ui blue right ribbon label">
-        <i class="edit icon"></i>Edit
-      </a>
-    <div class="markdn">Preview</div>
-  </div>
-<div class="ui buttons">
-  <button class="ui button">Cancel</button>
-  <div class="or"></div>
-  <%= submit "Save", class: "ui positive button" %>
-</div>
+  <%= submit "Save", class: "ui positive right floated button" %>
 <% end %>
