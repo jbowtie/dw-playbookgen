@@ -16,30 +16,45 @@
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <li class="link item">
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+  </li>
   <li class=" active item"><h3 class="header"><%= @playbook.drive_label %></h3></li>
   <%= for m <- motivation @playbook.moves do %>
     <li class="link item">
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <li class="link item">
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+  </li>
   <li class=" active item"><h3 class="header"><%= @playbook.option_label %></h3></li>
   <%= for m <- specials @playbook.moves do %>
     <li class="link item">
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <li class="link item">
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+  </li>
   <li class=" active item"><h3 class="header">Advanced (2-10)</h3></li>
   <%= for m <- advanced @playbook.moves do %>
     <li class="link item">
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <li class="link item">
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+  </li>
   <li class=" active item"><h3 class="header">Advanced (6-10)</h3></li>
   <%= for m <- master @playbook.moves do %>
     <li class="link item">
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <li class="link item">
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+  </li>
 </ul>
 </div>
 </div>

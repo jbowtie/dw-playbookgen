@@ -19,6 +19,13 @@ defmodule Playbook.MoveController do
     render(conn, "new.html", changeset: changeset, playbook: playbook)
   end
 
+  def new(conn, %{"playbook_id" => pbid, "level" => level}) do
+    playbook = Repo.get!(Playbook, pbid)
+    changeset = Move.changeset(%Move{})
+
+    render(conn, "new.html", changeset: changeset, playbook: playbook, level: level)
+  end
+
   def create(conn, %{"playbook_id" => pbid, "move" => move_params}) do
     playbook = Repo.get!(Playbook, pbid)
 
@@ -55,7 +62,7 @@ defmodule Playbook.MoveController do
       {:ok, move} ->
         conn
         |> put_flash(:info, "Move updated successfully.")
-        |> redirect(to: playbook_move_path(conn, :show, move.playbook_id, move))
+        |> redirect(to: playbook_path(conn, :edit, move.playbook_id))
       {:error, changeset} ->
         render(conn, "edit.html", move: move, changeset: changeset)
     end

@@ -1,6 +1,6 @@
 <h2>New move</h2>
 
 <%= render "form.html", changeset: @changeset, playbook: @playbook,
-                        action: playbook_move_path(@conn, :create, @playbook) %>
+                        action: playbook_move_path(@conn, :create, @playbook), level: @conn.params["level"] %>
 
 <%= link "Back", to: playbook_move_path(@conn, :index, @playbook) %>

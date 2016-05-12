@@ -13,9 +13,10 @@
   </head>
 
   <body>
-      <div class="ui container">
+      <p class="ui message info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <main class="ui container">
         <%= render @view_module, @view_template, assigns %>
-      </div>
+      </main>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <!-- script>
 window.onload = function() {
