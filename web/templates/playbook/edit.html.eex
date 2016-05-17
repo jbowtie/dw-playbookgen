@@ -1,11 +1,20 @@
 <header>
   <h1 class="ui block header">Edit playbook</h1>
+<div class="ui large breadcrumb">
+  <a class="section" href="/">Home</a>
+  <div class="divider"> / </div>
+  <%= for c <- @playbook.campaigns do %>
+    <%= link c.name, to: campaign_path(@conn, :edit, c), class: "section" %>
+    <div class="divider"> / </div>
+  <% end %>
+  <div class="active section"><%= @playbook.name %></div>
+</div>
 </header>
-
 <div class="ui grid">
   <div class="twelve wide column">
 <%= render "form.html", changeset: @changeset,
                         action: playbook_path(@conn, :update, @playbook) %>
+<%= button "Delete", to: playbook_path(@conn, :delete, @playbook), method: :delete, class: "ui negative left floated button" %>
 </div>
 
 <div class="four wide column">
@@ -44,7 +53,7 @@
     </li>
   <%end%>
   <li class="link item">
-    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
+    <%= link "Add", to: playbook_move_path(@conn, :new, @playbook, level: 2), class: "ui button" %>
   </li>
   <li class=" active item"><h3 class="header">Advanced (6-10)</h3></li>
   <%= for m <- master @playbook.moves do %>

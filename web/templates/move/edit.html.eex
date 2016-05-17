@@ -1,5 +1,21 @@
-<h2>Edit move</h2>
+<header>
+  <h1 class="ui block header">Edit move</h1>
+<div class="ui large breadcrumb">
+  <a class="section" href="/">Home</a>
+  <div class="divider"> / </div>
+  <%= for c <- @playbook.campaigns do %>
+    <%= link c.name, to: campaign_path(@conn, :edit, c), class: "section" %>
+    <div class="divider"> / </div>
+  <% end %>
+    <%= link @playbook.name, to: playbook_path(@conn, :edit, @playbook), class: "section" %>
+    <div class="divider"> / </div>
+  <div class="active section"><%= @move.title %></div>
+</div>
+</header>
 
 <%= render "form.html", changeset: @changeset, playbook: @playbook,
-                        action: playbook_move_path(@conn, :update, @playbook, @move) %>
+                        action: playbook_move_path(@conn, :update, @playbook, @move), move_level: nil %>
+<div>
+  <%= button "Delete", to: playbook_move_path(@conn, :delete, @playbook, @move), method: :delete, class: "ui negative left floated button" %>
+</div>
 

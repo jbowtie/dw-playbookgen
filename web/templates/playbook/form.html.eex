@@ -23,13 +23,13 @@
     <label>Damage Die</label>
     <div class="field">
       <%= radio_button f, :damageDie, "4" %>
-      <label class="ui button" for="playbook_damageDie_4"><img src="/images/d4.png" class="ui image" title="1d4, typical of a magician or non-combatant"/></label>
+      <label class="ui button" for="playbook_damageDie_4" title="1d4, typical of a magician or non-combatant"><img src="/images/d4.png" class="ui image"/></label>
       <%= radio_button f, :damageDie, "6" %>
-      <label class="ui button" for="playbook_damageDie_6"><img src="/images/d6.png" class="ui image" title="1d6, a good default for a life of adventure" /></label>
+      <label class="ui button" for="playbook_damageDie_6" title="1d6, a good default for a life of adventure"><img src="/images/d6.png" class="ui image"/></label>
       <%= radio_button f, :damageDie, "8" %>
-      <label class="ui button" for="playbook_damageDie_8"><img src="/images/d8.png" class="ui image" title="1d8, typical of a hunter or rogue" /></label>
+      <label class="ui button" for="playbook_damageDie_8" title="1d8, typical of a hunter or rogue"><img src="/images/d8.png" class="ui image"/></label>
       <%= radio_button f, :damageDie, "10" %>
-      <label class="ui button" for="playbook_damageDie_10"><img src="/images/d10.png" class="ui image" title="1d10, typical of a seasoned warrior"/></label>
+      <label class="ui button" for="playbook_damageDie_10" title="1d10, typical of a seasoned warrior"><img src="/images/d10.png" class="ui image"/></label>
     </div>
   </div>
   <div class="fields">
@@ -48,40 +48,36 @@
 </div>
 
   <div class="field">
-    <%= label f, :gear, "Starting Gear", class: "control-label" %>
+    <%= label f, :gear, "Starting Gear", class: "ui label" %>
     <%= textarea f, :gear, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
-    <%= label f, :bonds, "Bonds", class: "control-label" %>
+    <%= label f, :bonds, "Bonds", class: "ui label" %>
     <%= textarea f, :bonds, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
-    <%= label f, :nameList, "List of Names", class: "control-label" %>
+    <%= label f, :nameList, "List of Names", class: "ui label" %>
     <%= textarea f, :nameList, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
   <div class="field">
-    <%= label f, :option_label, "Label for specialization options (eg; race, specialization, manifestation)", class: "control-label" %>
+    <%= label f, :option_label, "Label for specialization options (eg; race, specialization, manifestation)", class: "ui label" %>
     <%= text_input f, :option_label, class: "form-control" %>
   </div>
   <div class="field">
-    <%= label f, :drive_label, "Label for motivation options (eg; alignment, drive)", class: "control-label" %>
+    <%= label f, :drive_label, "Label for motivation options (eg; alignment, drive)", class: "ui label" %>
     <%= text_input f, :drive_label, class: "form-control" %>
   </div>
   <div class="field">
-    <%= label f, :summary, "Elevator Pitch", class: "control-label" %>
+    <%= label f, :summary, "Elevator Pitch", class: "ui label" %>
     <%= textarea f, :summary, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
   <div class="field">
-    <%= label f, :look, "Look", class: "control-label" %>
+    <%= label f, :look, "Look", class: "ui label" %>
     <%= textarea f, :look, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
   </div>
 
-<div class="ui buttons">
-  <button class="ui button">Cancel</button>
-  <div class="or"></div>
-  <%= submit "Save", class: "ui positive button" %>
-</div>
+  <%= submit "Save", class: "ui positive right floated button" %>
 <% end %>

@@ -1,5 +1,10 @@
 <header>
   <h1 class="ui block header">Edit campaign</h1>
+<div class="ui large breadcrumb">
+  <a class="section" href="/">Home</a>
+  <div class="divider"> / </div>
+  <div class="active section"><%= @campaign.name %></div>
+</div>
 </header>
 
 <div class="ui grid">

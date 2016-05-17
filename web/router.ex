@@ -19,7 +19,6 @@ defmodule Playbook.Router do
     resources "/playbooks", PlaybookController do
         resources "/moves", MoveController
     end
-    resources "/moves", MoveController
     resources "/campaigns", CampaignController
   end
 
@@ -32,7 +31,7 @@ defmodule Playbook.Router do
   scope "/", Playbook do
     pipe_through :browser # Use the default browser stack
 
-    # get "/", PageController, :index
+    get "/", PageController, :campaigns
     get "/campaigns/", PageController, :campaigns
     get "/campaigns/:slug/", PageController, :playbook_list
 

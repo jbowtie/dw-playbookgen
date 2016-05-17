@@ -51,7 +51,9 @@
        color: #2185d0;
    }
 }
+header {margin:1em 0;}
 main { padding:1em 0; }
+footer {clear: both;padding:1em;}
 
 .ui.form .inline.fields .field {
     & > input[type="radio"] {display:none;}

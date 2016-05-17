@@ -21,7 +21,7 @@ defmodule Playbook.MoveController do
 
   def new(conn, %{"playbook_id" => pbid, "level" => level}) do
     playbook = Repo.get!(Playbook, pbid)
-    changeset = Move.changeset(%Move{})
+    changeset = Move.changeset(%{"level" => level})
 
     render(conn, "new.html", changeset: changeset, playbook: playbook, level: level)
   end
@@ -36,7 +36,7 @@ defmodule Playbook.MoveController do
       {:ok, _move} ->
         conn
         |> put_flash(:info, "Move created successfully.")
-        |> redirect(to: playbook_move_path(conn, :index, playbook))
+        |> redirect(to: playbook_path(conn, :edit, pbid))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -48,7 +48,7 @@ defmodule Playbook.MoveController do
   end
 
   def edit(conn, %{"playbook_id" => pbid, "id" => id}) do
-    playbook = Repo.get!(Playbook, pbid)
+    playbook = Repo.get!(Playbook, pbid) |> Repo.preload [:campaigns]
     move = Repo.get!(Move, id)
     changeset = Move.changeset(move)
     render(conn, "edit.html", move: move, changeset: changeset, playbook: playbook)
@@ -71,13 +71,14 @@ defmodule Playbook.MoveController do
   def delete(conn, %{"id" => id}) do
     move = Repo.get!(Move, id)
 
+    pb = move.playbook_id
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
     Repo.delete!(move)
 
     conn
     |> put_flash(:info, "Move deleted successfully.")
-    |> redirect(to: move_path(conn, :index))
+    |> redirect(to: playbook_path(conn, :edit, pb))
   end
 
 end

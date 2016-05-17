@@ -36,7 +36,7 @@ defmodule Playbook.PlaybookController do
   end
 
   def edit(conn, %{"id" => id}) do
-    playbook = Repo.get!(Playbook, id) |> Repo.preload [:moves]
+    playbook = Repo.get!(Playbook, id) |> Repo.preload [:moves, :campaigns]
     changeset = Playbook.changeset(playbook)
     render(conn, "edit.html", playbook: playbook, changeset: changeset)
   end

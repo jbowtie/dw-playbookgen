@@ -16,6 +16,8 @@ defmodule Playbook.Playbook do
     field :look, :string
 
     has_many :moves, Playbook.Move
+    has_many :members, Playbook.CampaignMembership
+    has_many :campaigns, through: [:members, :campaign]
     timestamps
   end
 
