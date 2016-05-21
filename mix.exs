@@ -36,7 +36,7 @@ defmodule Playbook.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:earmark, "~> 0.1.8" },
      {:exrm, "~> 0.19"},
-     {:edip, "~> 0.4.3"},
+     {:edib, "~> 0.7.0"},
      {:cowboy, "~> 1.0"}]
   end
 end

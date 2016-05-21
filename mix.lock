@@ -6,6 +6,7 @@
   "decimal": {:hex, :decimal, "1.1.0"},
   "earmark": {:hex, :earmark, "0.1.17"},
   "ecto": {:hex, :ecto, "1.1.0"},
+  "edib": {:hex, :edib, "0.7.0"},
   "edip": {:hex, :edip, "0.4.3"},
   "erlware_commons": {:hex, :erlware_commons, "0.15.0"},
   "exrm": {:hex, :exrm, "0.19.9"},
