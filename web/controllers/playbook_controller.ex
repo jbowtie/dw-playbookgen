@@ -21,9 +21,9 @@ defmodule Playbook.PlaybookController do
     changeset = Playbook.changeset(%Playbook{}, playbook_params)
 
     case Repo.insert(changeset) do
-      {:ok, _playbook} ->
+      {:ok, playbook} ->
         conn
-        |> put_flash(:info, "Playbook created successfully.")
+        |> put_flash(:info, "Playbook '#{playbook.name}' created successfully.")
         |> redirect(to: playbook_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,14 +42,15 @@ defmodule Playbook.PlaybookController do
   end
 
   def update(conn, %{"id" => id, "playbook" => playbook_params}) do
-    playbook = Repo.get!(Playbook, id)
+    playbook = Repo.get!(Playbook, id) |> Repo.preload([:campaigns])
+    [campaign|_] = playbook.campaigns
     changeset = Playbook.changeset(playbook, playbook_params)
 
     case Repo.update(changeset) do
       {:ok, playbook} ->
         conn
-        |> put_flash(:info, "Playbook updated successfully.")
-        |> redirect(to: playbook_path(conn, :show, playbook))
+        |> put_flash(:info, "Playbook '#{playbook.name}' updated successfully.")
+        |> redirect(to: campaign_path(conn, :edit, campaign))
       {:error, changeset} ->
         render(conn, "edit.html", playbook: playbook, changeset: changeset)
     end
