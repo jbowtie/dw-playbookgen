@@ -8,7 +8,7 @@ defmodule Playbook.MoveController do
   plug :scrub_params, "move" when action in [:create, :update]
 
   def index(conn, %{"playbook_id" => pbid}) do
-    playbook = Repo.get!(Playbook, pbid) |> Repo.preload [:moves]
+    playbook = Repo.get!(Playbook, pbid) |> Repo.preload([:moves])
     render(conn, "index.html", moves: playbook.moves, playbook: playbook)
   end
 
@@ -43,12 +43,12 @@ defmodule Playbook.MoveController do
   end
 
   def show(conn, %{"id" => id}) do
-    move = Repo.get!(Move, id) |> Repo.preload [:playbook]
+    move = Repo.get!(Move, id) |> Repo.preload([:playbook])
     render(conn, "show.html", move: move)
   end
 
   def edit(conn, %{"playbook_id" => pbid, "id" => id}) do
-    playbook = Repo.get!(Playbook, pbid) |> Repo.preload [:campaigns]
+    playbook = Repo.get!(Playbook, pbid) |> Repo.preload([:campaigns])
     move = Repo.get!(Move, id)
     changeset = Move.changeset(move)
     render(conn, "edit.html", move: move, changeset: changeset, playbook: playbook)
