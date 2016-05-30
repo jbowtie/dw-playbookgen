@@ -26,4 +26,5 @@ defmodule Playbook.PageView do
   def specials(moves) do
     Enum.filter(moves, &(&1.level == 30)) |> Enum.sort_by(&(&1.title))
   end
+
 end

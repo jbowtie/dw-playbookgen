@@ -209,35 +209,4 @@
             </aside>
         </div>
 
-
-
-        <div id="pf3" class="pf cmoves">
-            <img class="logo" src="/images/DWlogo.png" />
-            <h1>Basic Moves</h1>
-            <main style="width:29rem;">
-                <section class="moves">
-                    <div style="-moz-column-count: 3;">
-                      <%= for m <- advanced @book.moves do %>
-                        <article>
-                          <h3><%= m.title %></h3>
-                          <%= markdown m.desc %>
-                        </article>
-                      <% end %>
-                    </div>
-                    <h2 class="ff4 inv">Level 1 Spells</h2>
-                    <div style="-moz-column-count: 3;">
-                      <%= for m <- master @book.moves do %>
-                        <article>
-                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
-                          <%= if m.usage do %>
-                            <p class="ff5"><%= m.usage %></p>
-                          <% end %>
-                          <%= markdown m.desc %>
-                        </article>
-                      <% end %>
-                    </div>
-                </section>
-            </main>
-        </div>
-
       </div>

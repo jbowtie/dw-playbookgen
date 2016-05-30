@@ -1,6 +1,7 @@
 <div class="campaigns">
 <header>
   <h2><%= @campaign.name %></h2>
+  <p><%= link "Basic Moves", to: page_path(@conn, :moves, @campaign.slug) %></p>
 </header>
 
 <main>

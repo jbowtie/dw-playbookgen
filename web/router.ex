@@ -37,7 +37,7 @@ defmodule Playbook.Router do
     get "/", PageController, :campaigns
     get "/campaigns/", PageController, :campaigns
     get "/campaigns/:slug/", PageController, :playbook_list
-
+    get "/campaigns/:slug/moves", PageController, :moves
     get "/playbooks/:slug/", PageController, :show
   end
 

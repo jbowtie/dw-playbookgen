@@ -25,4 +25,9 @@ defmodule Playbook.PageController do
     playbook = Repo.get_by!(Playbook, slug: slug) |> Repo.preload([:moves])
     render conn, "Playbook.Main.html", book: playbook
   end
+
+  def moves(conn, %{"slug" => slug}) do
+    campaign = Repo.get_by!(Campaign, slug: slug) |> Repo.preload([:moves])
+    render conn, "Campaign.Moves.html", campaign: campaign
+  end
 end

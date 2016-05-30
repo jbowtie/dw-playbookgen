@@ -1,0 +1,52 @@
+<div id="page-container">
+        <div id="pf3" class="pf cmoves">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1>Basic Moves</h1>
+            <main style="width:29rem;">
+                <section class="moves">
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- starting @campaign.moves do %>
+                        <article>
+                          <h3><%= m.title %></h3>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                    <h2 class="ff4 inv">Level 1 Spells</h2>
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- specials @campaign.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <div id="pf4" class="pf adv">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1>Special Moves</h1>
+            <main style="width:29rem;margin-left: 2.75rem;">
+                <section class="moves">
+                    <h2 class="ff4 inv">Advanced Moves</h2>
+                    <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- starting @campaign.moves do %>
+                        <article>
+                          <h3><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+            </main>
+        </div>
+      </div>
