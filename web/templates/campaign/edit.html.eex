@@ -20,6 +20,17 @@ action: campaign_path(@conn, :update, @campaign) %>
     <li class="link item"><%= link p.name, to: playbook_path(@conn, :edit, p) %></li>
   <%end%>
   <li class="item"><%= link "Add playbook", to: playbook_path(@conn, :new), class: "ui button" %></li>
+
+  <li class=" active item"><h3 class="header">Basic Moves</h3></li>
+  <%= for m <- starting @campaign.moves do %>
+    <li class="link item"><%= link m.title, to: campaign_campaign_move_path(@conn, :edit, @campaign, m) %></li>
+  <%end%>
+  <li class="item"><%= link "Add move", to: campaign_campaign_move_path(@conn, :new, @campaign, level: 1), class: "ui button" %></li>
+  <li class=" active item"><h3 class="header">Special Moves</h3></li>
+  <%= for m <- advanced @campaign.moves do %>
+    <li class="link item"><%= link m.title, to: campaign_campaign_move_path(@conn, :edit, @campaign, m) %></li>
+  <%end%>
+  <li class="item"><%= link "Add move", to: campaign_campaign_move_path(@conn, :new, @campaign, level: 2), class: "ui button" %></li>
 </ul>
 </div>
 </div>

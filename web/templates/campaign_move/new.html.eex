@@ -1,0 +1,45 @@
+<div class="ui text container">
+<h1 class="ui header">Add a move</h1>
+
+<%= form_for @changeset, campaign_campaign_move_path(@conn, :create, @campaign), [{:class, "ui form"}], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="ui message error">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label f, :level, "Move Type", class: "ui label" %>
+    <%= select(f, :level, [
+      "Basic": "1", 
+      "Special": "2",
+    ], class: "ui dropdown", value: @conn.params["level"])%>
+  </div>
+
+  <div class="field">
+    <%= text_input f, :title, class: "ui input", required: "required" %>
+    <%= label f, :title, "Title" %>
+  </div>
+
+  <%= if @conn.params["level"] in ["2", "6"] do %>
+  <div class="field">
+    <%= text_input f, :usage, class: "ui input" %>
+    <%= label f, :usage, "Usage" %>
+    <p class="ui small message"><i>Optional.</i> Used to show which moves are required or replaced. Example: "Requires: First Aid "</p>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= label f, :desc, "Description", class: "ui label" %>
+    <%= textarea f, :desc, data_uk_htmleditor: "{markdown:true, mode:'tab'}" %>
+  </div>
+
+
+  <%= submit "Save", class: "ui positive right floated button" %>
+<% end %>
+</div>

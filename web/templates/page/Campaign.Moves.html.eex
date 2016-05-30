@@ -36,7 +36,7 @@
                     <h2 class="ff4 inv">Advanced Moves</h2>
                     <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
                     <div style="-moz-column-count: 3;">
-                      <%= for m <- starting @campaign.moves do %>
+                      <%= for m <- advanced @campaign.moves do %>
                         <article>
                           <h3><%= m.title %></h3>
                           <%= if m.usage do %>
