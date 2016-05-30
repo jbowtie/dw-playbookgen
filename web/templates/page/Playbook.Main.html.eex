@@ -105,7 +105,7 @@
             <section>
               <h2 class="ff4 inv">Bonds</h2>
               <p class="ff5">Fill in at least one with the name of a companion, or write your own.</p>
-              <%= {:safe, Earmark.to_html @book.bonds} %>
+              <%= markdown @book.bonds %>
               <p class="bp"> </p>
               <p class="bp"> </p>
               <p class="bp"> </p>
@@ -181,7 +181,17 @@
                     <h2 class="ff4 inv" style="font-size:0.8em;">Starting Gear<img src="/images/gear.png" /></h2>
                     <p class="ff3 sm"><span>Max Load (<%= @book.loadBase %>+STR)</span><span>Current</span></p>
                     </hgroup>
-                    <%= {:safe, Earmark.to_html @book.gear} %>
+                    <%= markdown @book.gear %>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
                     <p class="bp"> </p>
                     <p class="bp"> </p>
                     <p class="bp"> </p>
@@ -198,4 +208,36 @@
                 </section>
             </aside>
         </div>
+
+
+
+        <div id="pf3" class="pf cmoves">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1>Basic Moves</h1>
+            <main style="width:29rem;">
+                <section class="moves">
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- advanced @book.moves do %>
+                        <article>
+                          <h3><%= m.title %></h3>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                    <h2 class="ff4 inv">Level 1 Spells</h2>
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- master @book.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+            </main>
+        </div>
+
       </div>

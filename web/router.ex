@@ -26,6 +26,9 @@ defmodule Playbook.Router do
   scope "/api", Playbook do
     pipe_through :api
     resources "/campaign_playbook", CampaignMembershipController, except: [:new, :edit]
+    resources "/power_sets", PowerSetController, except: [:new, :edit]
+    resources "/power_groups", PowerGroupController, except: [:new, :edit]
+    resources "/powers", PowerController, except: [:new, :edit]
   end
 
   scope "/", Playbook do

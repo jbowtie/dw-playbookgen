@@ -7,6 +7,8 @@ defmodule Playbook.Campaign do
     field :pitch, :string
     has_many :members, Playbook.CampaignMembership
     has_many :playbooks, through: [:members, :playbook]
+    has_many :moves, Playbook.CampaignMove
+
     timestamps
   end
   @required_fields ~w(name slug pitch)

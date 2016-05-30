@@ -2,7 +2,10 @@ defmodule Playbook.PlaybookView do
   use Playbook.Web, :view
 
   def markdown(txt) do
-   {:safe, Earmark.to_html txt}
+    output = txt 
+    |> String.replace("[xxx]", "\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_")
+    |> Earmark.to_html
+   {:safe, output}
   end
 
   def starting(moves) do
