@@ -4,6 +4,7 @@ defmodule Playbook.PowerSet do
   schema "power_sets" do
     field :title, :string
     belongs_to :playbook, Playbook.Playbook
+    has_many :groups, Playbook.PowerGroup
 
     timestamps
   end

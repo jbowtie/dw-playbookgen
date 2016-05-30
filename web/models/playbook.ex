@@ -18,6 +18,7 @@ defmodule Playbook.Playbook do
     has_many :moves, Playbook.Move
     has_many :members, Playbook.CampaignMembership
     has_many :campaigns, through: [:members, :campaign]
+    has_one :powerset, Playbook.PowerSet
     timestamps
   end
 

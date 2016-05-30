@@ -4,7 +4,8 @@ defmodule Playbook.PowerGroup do
   schema "power_groups" do
     field :title, :string
     field :order, :integer
-    belongs_to :powerset, Playbook.Powerset
+    belongs_to :power_set, Playbook.PowerSet
+    has_many :powers, Playbook.Power
 
     timestamps
   end

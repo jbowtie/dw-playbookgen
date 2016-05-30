@@ -5,7 +5,7 @@ defmodule Playbook.Power do
     field :title, :string
     field :usage, :string
     field :desc, :string
-    belongs_to :powergroup, Playbook.Powergroup
+    belongs_to :power_group, Playbook.PowerGroup
 
     timestamps
   end

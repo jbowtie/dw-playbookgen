@@ -6,11 +6,11 @@ defmodule Playbook.Repo.Migrations.CreatePower do
       add :title, :string
       add :usage, :string
       add :desc, :text
-      add :powergroup_id, references(:power_groups, on_delete: :nothing)
+      add :power_group_id, references(:power_groups, on_delete: :nothing)
 
       timestamps
     end
-    create index(:powers, [:powergroup_id])
+    create index(:powers, [:power_group_id])
 
   end
 end

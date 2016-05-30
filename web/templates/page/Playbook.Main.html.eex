@@ -209,4 +209,28 @@
             </aside>
         </div>
 
+        <%= if @book.powerset do %>
+        <div id="pf3" class="pf cmoves">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1><%= @book.powerset.title %></h1>
+            <main style="width:29rem;">
+              <%= for g <- @book.powerset.groups do  %>
+                <section class="moves">
+                  <h2 class="ff4 inv"><%= g.title %></h2>
+                    <div style="-moz-column-count: 3;">
+                      <%= for m <- g.powers do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+              <% end %>
+            </main>
+        </div>
+      <% end %>
       </div>
