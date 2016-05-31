@@ -31,11 +31,11 @@ defmodule Playbook.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.1.4"},
      {:phoenix_ecto, "~> 2.0"},
-     {:postgrex, "~> 0.10.0"},
+     {:postgrex, "~> 0.11.1"},
      {:phoenix_html, "~> 2.3"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:earmark, "~> 0.1.8" },
-     {:exrm, "~> 0.19"},
+     {:earmark, "~> 0.2.1" },
+     {:exrm, "~> 1.0.5"},
      {:edib, "~> 0.7.0"},
      {:cowboy, "~> 1.0"}]
   end
