@@ -37,7 +37,7 @@ defmodule Playbook.CampaignMoveController do
     end
   end
 
-  def edit(conn, %{"campaign_id" => pbid, "id" => id}) do
+  def edit(conn, %{"campaign_id" => _pbid, "id" => id}) do
     move = Repo.get!(CampaignMove, id) |> Repo.preload([:campaign])
     changeset = CampaignMove.changeset(move)
     render(conn, "edit.html", move: move, changeset: changeset)
