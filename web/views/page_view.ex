@@ -27,4 +27,20 @@ defmodule Playbook.PageView do
     Enum.filter(moves, &(&1.level == 30)) |> Enum.sort_by(&(&1.title))
   end
 
+
+
+  def basic(moves) do
+    Enum.filter(moves, &(&1.level == 1 && &1.subgroup == nil)) |> Enum.sort_by(&(&1.title))
+  end
+
+  def basic_groups(moves) do
+    Enum.filter(moves, &(&1.level == 1 && &1.subgroup != nil)) 
+      |> Enum.group_by(&(&1.subgroup))
+      |> Map.keys
+  end
+
+  def group(moves, key) do
+    Enum.filter(moves, &(&1.subgroup == key))
+      |> Enum.sort_by(&(&1.title))
+  end
 end

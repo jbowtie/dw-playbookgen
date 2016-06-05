@@ -30,9 +30,15 @@
   <div class="field">
     <%= text_input f, :usage, class: "ui input" %>
     <%= label f, :usage, "Usage" %>
-    <p class="ui small message"><i>Optional.</i> Used to show which moves are required or replaced. Example: "Requires: First Aid "</p>
+    <p class="ui small message"><i>Optional.</i> Used to show which moves are required or replaced. Example: "Requires: First Aid"</p>
   </div>
   <% end %>
+
+  <div class="field">
+    <%= text_input f, :subgroup, class: "ui input" %>
+    <%= label f, :subgroup, "Group" %>
+    <p class="ui small message"><i>Optional.</i> Used to create a group of moves, such as "Travel Moves" or "Follower Moves".</p>
+  </div>
 
   <div class="field">
     <%= label f, :desc, "Description", class: "ui label" %>
