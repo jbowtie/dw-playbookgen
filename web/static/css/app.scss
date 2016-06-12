@@ -384,15 +384,24 @@ aside section > div {
 }
 
 .campaigns {
-    background:url(/images/tweed.png);
+    background:url(/images/clean_textile.png);
     font-size:2rem;
     box-sizing:border-box;
     article {
         box-sizing:border-box;
-        background:url(/images/clean_textile.png);
+        //background:url(/images/clean_textile.png);
         border-radius:0.25rem;
-        margin:0 auto 1.5rem;
+        margin:0 auto 0.5rem;
         padding:0.5rem;
+        background-image:linear-gradient(to bottom, #FFF8B9 0px, #FFF386 100%);
+        border: thin solid #777;
+        box-shadow:1px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+    article:nth-child(odd){
+        transform: rotate(1.01724deg);
+    }
+    article:nth-child(even){
+        transform: rotate(-1.01724deg);
     }
     main {
         height:auto;
@@ -403,10 +412,13 @@ aside section > div {
     }
     header {
         padding: 0.5rem;
+        p {
+            text-align:center;
+        }
     }
     h2 {
-        color:white;
-        font-family:ff2;
+        //color:white;
+        font-family:Lato;
         margin:0 auto;
         text-align:center;
     }
@@ -430,7 +442,12 @@ aside section > div {
         list-style-type: none;
     }
     li {
+        font-family:Lato;
         line-height:1.8;
+    }
+
+    p {
+        font-family:Lato;
     }
 
 }

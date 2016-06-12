@@ -25,6 +25,11 @@
       <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
     </li>
   <%end%>
+  <%= for m <- startingaside @playbook.moves do %>
+    <li class="link item">
+      <%= link m.title, to: playbook_move_path(@conn, :edit, @playbook, m) %>
+    </li>
+  <%end%>
   <li class="link item">
     <%= link "Add", to: playbook_move_path(@conn, :new, @playbook), class: "ui button" %>
   </li>

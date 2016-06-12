@@ -1,12 +1,23 @@
 <div class="campaigns">
 <header>
   <h2><%= @campaign.name %></h2>
-  <p><%= link "Basic Moves", to: page_path(@conn, :moves, @campaign.slug) %></p>
+  <p>Don't forget your <%= link "Basic Moves", to: page_path(@conn, :moves, @campaign.slug) %>!</p>
 </header>
 
 <main>
+  <section class="books">
+    <h4>PLAYBOOKS</h4>
+    <ul>
+      <%= for p <- @campaign.playbooks |> Enum.sort_by(&(&1.name)) do %>
+        <li><%= link p.name, to: "##{p.slug}" %></li>
+      <%end%>
+    </ul>
+  </section>
+  <div>
+    <%= markdown @campaign.pitch %>
+  </div>
 <%= for book <- @books do %>
-<article>
+  <article id="<%= book.slug%>">
   <h3><%= book.name %></h3>
   <%= markdown book.summary %>
   <p><%= link "Playbook", to: page_path(@conn, :show, book.slug) %></p>
