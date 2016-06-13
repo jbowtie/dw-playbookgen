@@ -65,7 +65,7 @@
 
             <section class="moves">
                 <h2 class="ff4 inv">Starting Moves</h2>
-                <div style="-moz-column-count: 2;">
+                <div style="-moz-column-count: 2;column-count: 2;">
                 <%= for m <- starting @book.moves do %>
                     <article>
                         <h3><i class="fa fa-check-square-o"></i><%= m.title %></h3>
@@ -147,7 +147,7 @@
                 <section class="moves">
                     <h2 class="ff4 inv">Advanced Moves</h2>
                     <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
-                    <div style="-moz-column-count: 2;">
+                    <div style="-moz-column-count: 2;column-count: 2;">
                       <%= for m <- advanced @book.moves do %>
                         <article>
                           <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
@@ -159,7 +159,7 @@
                       <% end %>
                     </div>
                     <p class="ff5 master">When you gain a level from 6-10, you may choose from these moves.</p>
-                    <div style="-moz-column-count: 2;">
+                    <div style="-moz-column-count: 2;column-count: 2;">
                       <%= for m <- master @book.moves do %>
                         <article>
                           <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
@@ -217,7 +217,7 @@
               <%= for g <- @book.powerset.groups do  %>
                 <section class="moves">
                   <h2 class="ff4 inv"><%= g.title %></h2>
-                    <div style="-moz-column-count: 3;">
+                    <div style="-moz-column-count: 3;column-count: 3;">
                       <%= for m <- g.powers do %>
                         <article>
                           <h3><i class="fa fa-square-o"></i><%= m.title %></h3>

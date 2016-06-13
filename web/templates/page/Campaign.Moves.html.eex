@@ -4,7 +4,7 @@
             <h1>Basic Moves</h1>
             <main style="width:29rem;">
                 <section class="moves">
-                    <div style="-moz-column-count: 3;">
+                    <div style="-moz-column-count: 3;column-count:3;">
                       <%= for m <- basic @campaign.moves do %>
                         <article>
                           <h3><%= m.title %></h3>
@@ -32,7 +32,7 @@
             <h1>Special Moves</h1>
             <main style="width:29rem;margin-left: 2.75rem;">
                 <section class="moves">
-                    <div style="-moz-column-count: 3;">
+                    <div style="-moz-column-count: 3;column-count:3;">
                       <%= for m <- advanced @campaign.moves do %>
                         <article>
                           <h3><%= m.title %></h3>
