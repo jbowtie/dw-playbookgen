@@ -12,6 +12,7 @@
     "codemirror": "^5.14.2",
     "marked": "^0.3.5",
     "uikit": "^2.26.2",
-    "semantic-ui-dropdown": "^2.1.7"
+    "semantic-ui-dropdown": "^2.1.7",
+    "jquery-mobile": "^1.4.5"
   }
 }

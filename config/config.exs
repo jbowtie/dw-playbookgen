@@ -8,11 +8,11 @@ use Mix.Config
 # Configures the endpoint
 config :playbook, Playbook.Endpoint,
   url: [host: "localhost"],
-  root: Path.dirname(__DIR__),
   secret_key_base: "xDamRe3Gqg9JGDhkevTsX7HxhUVeafgP4DQL1dlb7UvFP42DFylDG+dn/3GRt8IE",
   render_errors: [default_format: "html"],
   pubsub: [name: Playbook.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  ecto_repos: [Playbook.Repo]
 
 # Configures Elixir's Logger
 config :logger, :console,

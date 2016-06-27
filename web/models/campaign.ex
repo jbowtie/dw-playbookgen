@@ -32,4 +32,10 @@ defmodule Playbook.CampaignMembership do
     belongs_to :campaign, Playbook.Campaign
     belongs_to :playbook, Playbook.Playbook
   end
+  @required_fields ~w(campaign playbook)
+  @optional_fields ~w()
+  def changeset(model, params \\ :empty) do
+    model
+    |> cast(params, @required_fields, @optional_fields)
+  end
 end
