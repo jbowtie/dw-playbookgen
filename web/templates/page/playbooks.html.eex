@@ -20,7 +20,7 @@
   <article id="<%= book.slug%>">
   <h3><%= book.name %></h3>
   <%= markdown book.summary %>
-  <p><%= link "Playbook", to: page_path(@conn, :show, book.slug) %></p>
+  <p><%= link "Playbook", to: page_path(@conn, :show, @campaign.slug, book.slug) %></p>
 </article>
 <% end %>
 </main>

@@ -27,6 +27,19 @@ defmodule Playbook.PageController do
     render conn, "Playbook.Main.html", book: playbook
   end
 
+  def show(conn, %{"campaign" => campaign_slug, "slug" => slug}) do
+    campaign = Repo.get_by!(Campaign, slug: campaign_slug) |> Repo.preload([:moves])
+    playbook = Repo.get_by!(Playbook, slug: slug) 
+      |> Repo.preload([:moves, powerset: [groups: :powers]])
+    render conn, "Playbook.Main.html", book: playbook, campaign: campaign
+  end
+
+  def print(conn, %{"slug" => slug}) do
+    playbook = Repo.get_by!(Playbook, slug: slug) 
+      |> Repo.preload([:moves, powerset: [groups: :powers]])
+    render conn, "Playbook.Print.html", book: playbook
+  end
+
   def moves(conn, %{"slug" => slug}) do
     campaign = Repo.get_by!(Campaign, slug: slug) |> Repo.preload([:moves])
     render conn, "Campaign.Moves.html", campaign: campaign

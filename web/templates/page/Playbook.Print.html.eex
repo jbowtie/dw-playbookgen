@@ -1,0 +1,236 @@
+<div id="page-container">
+    <div id="pf1" class="pf">
+        <img class="logo" src="/images/DWlogo.png" />
+        <h1><%= @book.name %></h1>
+        <main>
+          <section id="name">
+            <h2 class="ff4 fillin">NAME</h2>
+            <div>
+              <div class="sm" style="font-style:italic;"><%= markdown @book.nameList %></div>
+            </div>
+          </section>
+
+          <section class="detail">
+            <div class="look">
+              <h2 class="ff4 inv">Look</h2>
+                    <p class="ff5">Choose one for each, or write your own:</p>
+                    <%= markdown @book.look %>
+                    <p class="bp"> </p>
+                </div>
+                <div class="combat">
+                    <h2 class="ff4 inv">Armor<img src="/images/AC.png" /></h2>
+                    <section class="hp">
+                        <h2 class="ff4 inv">Hit Points<img src="/images/heart.png" /></h2>
+                        <p class="ff3 sm"><span>Max (<%= @book.hpBase %>+Constitution)</span><span>Current</span></p>
+                    </section>
+                    <h2 class="ff4 inv">Damage<img src="/images/d<%= @book.damageDie %>.png" /></h2>
+                </div>
+            </section>
+
+            <section class="stats">
+                <p class="ff5">Assign these scores to your stats: 16(+2), 15(+1), 13(+1), 12(–), 9(–), 8(-1)</p>
+                <div>
+                    <div class="stat">
+                        <h2 class="ff4">Strength</h2>
+                        <h2 class="ff2 inv"><span class="statmod">STR</span></h2>
+                        <p class="ff4">Weak -1 <i class="fa fa-square"></i></p>
+                    </div>
+                    <div class="stat">
+                        <h2 class="ff4">Dexterity</h2>
+                        <h2 class="ff2 inv"><span class="statmod">DEX</span></h2>
+                        <p class="ff4">Shaky -1 <i class="fa fa-square"></i></p>
+                    </div>
+                    <div class="stat">
+                        <h2 class="ff4">Constitution</h2>
+                        <h2 class="ff2 inv"><span class="statmod">CON</span></h2>
+                        <p class="ff4">Sick -1 <i class="fa fa-square"></i></p>
+                    </div>
+                    <div class="stat">
+                        <h2 class="ff4">Intelligence</h2>
+                        <h2 class="ff2 inv"><span class="statmod">INT</span></h2>
+                        <p class="ff4">Stunned -1 <i class="fa fa-square"></i></p>
+                    </div>
+                    <div class="stat">
+                        <h2 class="ff4">Wisdom</h2>
+                        <h2 class="ff2 inv"><span class="statmod">WIS</span></h2>
+                        <p class="ff4">Confused -1 <i class="fa fa-square"></i></p>
+                    </div>
+                    <div class="stat">
+                        <h2 class="ff4">Charisma</h2>
+                        <h2 class="ff2 inv"><span class="statmod">CHA</span></h2>
+                        <p class="ff4">Scarred -1 <i class="fa fa-square"></i></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="moves">
+                <h2 class="ff4 inv">Starting Moves</h2>
+                <div style="-moz-column-count: 2;column-count: 2;">
+                <%= for m <- starting @book.moves do %>
+                    <article>
+                        <h3><i class="fa fa-check-square-o"></i><%= m.title %></h3>
+                        <%= markdown m.desc %>
+                    </article>
+                <% end %>
+                </div>
+            </section>
+          </main>
+
+          <aside class="col2">
+            <div style="display:flex;margin-bottom:2.3em;">
+              <h2 class="ff4" style="margin-top:0.4em;flex:1;">LEVEL</h2>
+              <h2 class="ff4 fillin" style="margin-top:0;flex:1;">XP</h2>
+            </div>
+
+            <section>
+              <h2 class="ff4 inv"><%= @book.drive_label %></h2>
+              <%= for m <- motivation @book.moves do %>
+                <div>
+                  <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                  <div>
+                    <h3><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                  </div>
+                </div>
+              <% end %>
+              <div>
+                <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                <div style="flex-grow:1;">
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 class="ff4 inv">Bonds</h2>
+              <p class="ff5">Fill in at least one with the name of a companion, or write your own.</p>
+              <%= markdown @book.bonds %>
+              <p class="bp"> </p>
+              <p class="bp"> </p>
+              <p class="bp"> </p>
+            </section>
+            <section>
+              <h2 class="ff4 inv"><%= @book.option_label %></h2>
+              <%= for m <- specials @book.moves do %>
+                <div>
+                  <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                  <div>
+                    <h3><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                  </div>
+                </div>
+              <% end %>
+              <div>
+                <div class="cbox"><i class="fa fa-2x fa-square-o"></i></div>
+                <article style="flex-grow:1;">
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                  <p class="bp"> </p>
+                </article>
+              </div>
+            </section>
+            <section>
+            <%= for m <- startingaside @book.moves do %>
+                <article>
+                    <h3 class="ff4 inv"><i class="fa fa-check-square-o"></i><%= m.title %></h3>
+                    <%= markdown m.desc %>
+                </article>
+            <% end %>
+            </section>
+          </aside>
+        </div>
+        <div id="pf2" class="pf adv">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1><%= @book.name %></h1>
+            <main>
+                <section class="moves">
+                    <h2 class="ff4 inv">Advanced Moves</h2>
+                    <p class="ff5">When you gain a level from 2-10, you may choose from these moves.</p>
+                    <div style="-moz-column-count: 2;column-count: 2;">
+                      <%= for m <- advanced @book.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                    <p class="ff5 master">When you gain a level from 6-10, you may choose from these moves.</p>
+                    <div style="-moz-column-count: 2;column-count: 2;">
+                      <%= for m <- master @book.moves do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+            </main>
+            <aside class="col2">
+                <section>
+                    <h2 class="ff4 inv coin">Coin<img src="/images/coin.png" /></h2>
+                </section>
+                <section class="gear">
+                    <hgroup>
+                    <h2 class="ff4 inv" style="font-size:0.8em;">Starting Gear<img src="/images/gear.png" /></h2>
+                    <p class="ff3 sm"><span>Max Load (<%= @book.loadBase %>+STR)</span><span>Current</span></p>
+                    </hgroup>
+                    <%= markdown @book.gear %>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                    <p class="bp"> </p>
+                </section>
+            </aside>
+        </div>
+
+        <%= if @book.powerset do %>
+        <div id="pf3" class="pf cmoves">
+            <img class="logo" src="/images/DWlogo.png" />
+            <h1><%= @book.powerset.title %></h1>
+            <main style="width:29rem;">
+              <%= for g <- @book.powerset.groups do  %>
+                <section class="moves">
+                  <h2 class="ff4 inv"><%= g.title %></h2>
+                    <div style="-moz-column-count: 3;column-count: 3;">
+                      <%= for m <- g.powers do %>
+                        <article>
+                          <h3><i class="fa fa-square-o"></i><%= m.title %></h3>
+                          <%= if m.usage do %>
+                            <p class="ff5"><%= m.usage %></p>
+                          <% end %>
+                          <%= markdown m.desc %>
+                        </article>
+                      <% end %>
+                    </div>
+                </section>
+              <% end %>
+            </main>
+        </div>
+      <% end %>
+      </div>
