@@ -1,5 +1,15 @@
 defmodule Playbook.PageView do
   use Playbook.Web, :view
+  
+  def render("page_title", assigns) do
+    case assigns[:action_name] do
+      :show -> assigns[:book].name
+      :print -> "#{assigns[:book].name} (printable)"
+      :moves -> "Basic Moves - #{assigns[:campaign].name}"
+      :playbook_list -> assigns[:campaign].name
+      _     -> "Playbooks"
+    end
+  end
 
   def markdown(txt) do
     output = txt 

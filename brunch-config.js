@@ -21,7 +21,8 @@ exports.config = {
     },
     stylesheets: {
       joinTo: {
-          'css/app.css':  /^(web\/static\/css)/,
+          'css/app.css':  ["web/static/css/app.scss", "web/static/vendor/j*.css"],
+          'css/print.css':  "web/static/css/print.scss",
           'css/admin.css': /^(?!web\/static\/css)/
       }
     },
