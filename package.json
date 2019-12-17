@@ -2,8 +2,8 @@
   "repository": {},
   "dependencies": {
     "babel-brunch": "^7.0.0",
-    "brunch": "^2.7.7",
-    "clean-css-brunch": "^2.0.0",
+    "brunch": "^3.0.0",
+    "clean-css-brunch": "^3.0.0",
     "css-brunch": "^2.6.1",
     "javascript-brunch": "^2.0.0",
     "jquery-mobile": "^1.4.1",
