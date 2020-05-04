@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -77,3 +77,26 @@ patch:
         patched: '2019-10-05T08:50:42.169Z'
     - snyk > proxy-agent > pac-proxy-agent > https-proxy-agent:
         patched: '2019-10-05T08:50:42.169Z'
+  SNYK-JS-LODASH-567746:
+    - node-sass > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/core > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-unicode-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/preset-modules > @babel/plugin-transform-dotall-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
+    - babel-brunch > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-02T08:50:32.896Z'
